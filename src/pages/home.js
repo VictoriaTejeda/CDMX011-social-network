@@ -1,10 +1,10 @@
-export const home = () => {
-  const view = `
-        <div class= "eslogan">
-            <section class= "frase">
-                <h1> Y tú, aún le temes a la obscuridad ?</h1>
-            </section>
-        </div>
-    `;
-  return view;
+// import router from "../routes/router";
+const home = {
+  template: () => {
+    const view = `
+     <h1>I am home Page</h1>
+     `;
+    document.getElementById('root').innerHTML = view;
+  },
 };
+export default home;

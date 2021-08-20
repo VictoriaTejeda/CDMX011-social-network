@@ -1,10 +1,10 @@
-const logIn = {
+const singUp = {
   template: () => {
     const view = `
-        <h1>I am About Page.</h1>
-        `;
+      <h1>I am contact Page</h1>
+    `;
     document.getElementById('root').innerHTML = view;
   },
 };
 
-export default logIn;
+export default singUp;
