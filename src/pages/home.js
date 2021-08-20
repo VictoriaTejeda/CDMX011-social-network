@@ -1,10 +1,11 @@
-// import router from "../routes/router";
-const home = {
-  template: () => {
-    const view = `
-     <h1>I am home Page</h1>
-     `;
-    document.getElementById('root').innerHTML = view;
-  },
+const home = () => {
+  const view = `
+    <div class="Home">
+    <p>Y tu a que le tienes miedo</p>
+      <button id="singup">Sing Up</button>
+      <button id="login">Log In</button>
+    </div>
+  `;
+  return view;
 };
 export default home;
