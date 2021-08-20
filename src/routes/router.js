@@ -5,8 +5,8 @@ import home from '../pages/home.js';
 
 const routes = {
   '/': home(),
-  '/singup': singUp(),
-  '/login': logIn(),
+  '/singUp': singUp(),
+  '/logIn': logIn(),
 };
 // Se inyecta una vista por default al cargar la  pagina
 const rootDiv = document.getElementById('root');

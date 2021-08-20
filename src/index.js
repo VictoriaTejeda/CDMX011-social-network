@@ -5,22 +5,12 @@ import router from './routes/router.js';
 document.addEventListener('click', (e) => {
   if (e.target.getAttribute('id') === 'back') {
     router('/');
-  } else if (e.target.getAttribute('id') === 'singup') {
-    router('/singup');
-  } else if (e.target.getAttribute('id') === 'login') {
-    router('/login');
+  } else if (e.target.getAttribute('id') === 'singUp') {
+    router('/singUp');
+  } else if (e.target.getAttribute('id') === 'logIn') {
+    router('/logIn');
   }
 });
-window.addEventListener('load', () => {
-  if (window.location.pathname === '/') {
-    router('/');
-  }
-  if (window.location.pathname === '/singUp') {
-    router('/singup');
-  }
-  if (window.location.pathname === '/logIn') {
-    router('/login');
-  }
-});
+
 
 // Fin de eventos de los hipervinculos del menu
