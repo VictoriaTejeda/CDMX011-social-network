@@ -12,5 +12,4 @@ document.addEventListener('click', (e) => {
   }
 });
 
-
 // Fin de eventos de los hipervinculos del menu
