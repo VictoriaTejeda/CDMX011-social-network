@@ -11,4 +11,16 @@ document.addEventListener('click', (e) => {
     router('/login');
   }
 });
+window.addEventListener('load', () => {
+  if (window.location.pathname === '/') {
+    router('/');
+  }
+  if (window.location.pathname === '/singUp') {
+    router('/singup');
+  }
+  if (window.location.pathname === '/logIn') {
+    router('/login');
+  }
+});
+
 // Fin de eventos de los hipervinculos del menu
