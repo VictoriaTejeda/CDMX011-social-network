@@ -1,11 +1,21 @@
-const home = () => {
-  const view = `
-    <div class="Home">
-    <p>Y tu a que le tienes miedo</p>
-      <button id="singUp">Sing Up</button>
-      <button id="logIn">Log In</button>
-    </div>
-  `;
-  return view;
+// eslint-disable-next-line import/no-cycle
+import { onNavigate } from '../index.js';
+
+export const home = () => {
+  const divHome = document.createElement('div');
+  const buttonSignUp = document.createElement('button');
+  buttonSignUp.classList.add('signup');
+  const buttonLogIn = document.createElement('button');
+  buttonLogIn.classList.add('login');
+
+  buttonSignUp.textContent = 'Sign Up';
+  buttonLogIn.textContent = 'Log In';
+
+  buttonSignUp.addEventListener('click', () => onNavigate('/signUp'));
+  buttonLogIn.addEventListener('click', () => onNavigate('/logIn'));
+
+  divHome.appendChild(buttonSignUp);
+  divHome.appendChild(buttonLogIn);
+
+  return divHome;
 };
-export default home;

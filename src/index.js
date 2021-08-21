@@ -1,16 +1,33 @@
-import router from './routes/router.js';
+/* eslint-disable import/no-cycle */
+import { home } from './pages/home.js';
+// eslint-disable-next-line import/no-cycle
+import { logIn } from './pages/logIn.js';
+import { signUp } from './pages/signUp.js';
 
-// Inicio de Eventos de los hiperviculos del menu
+const rootDiv = document.getElementById('root');
 
-document.addEventListener('click', (e) => {
-  if (e.target.getAttribute('id') === 'back') {
-    router('/');
-  } else if (e.target.getAttribute('id') === 'singUp') {
-    router('/singUp');
-  } else if (e.target.getAttribute('id') === 'logIn') {
-    router('/logIn');
+const routes = {
+  '/': home,
+  '/logIn': logIn,
+  '/signUp': signUp,
+};
+
+export const onNavigate = (pathname) => {
+  window.history.pushState(
+    {},
+    pathname,
+    window.location.origin + pathname,
+  );
+  while (rootDiv.firstChild) {
+    rootDiv.removeChild(rootDiv.firstChild);
   }
-});
+  rootDiv.appendChild(routes[pathname]());
+};
 
+const component = routes[window.location.pathname];
 
-// Fin de eventos de los hipervinculos del menu
+window.onpopstate = () => {
+  rootDiv.appendChild(component());
+};
+
+rootDiv.appendChild(component());
