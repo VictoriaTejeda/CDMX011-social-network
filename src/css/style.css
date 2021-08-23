@@ -5,12 +5,19 @@
     padding:0;
 }
 
-body {
-    background: url(../images/deskop-background.png);
+/*body {
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+}*/
+
+.login-body {
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../images/fondo_secodpage.jpg);
 }
 
 /* menu de navegacion */
@@ -146,8 +153,6 @@ nav li a i {
     color: #FFFFFF;
 }
 
-
-
 .btn_google div {
     display: flex;
     justify-content: center;
@@ -167,4 +172,7 @@ nav li a i {
     flex: 0 1 auto;
 }
   
+/* @media tablet*/
+/* @media escritorio*/
+
 
