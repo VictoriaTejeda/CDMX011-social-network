@@ -3,14 +3,16 @@
 import { onNavigate } from '../index.js';
 
 export const home = () => {
-  const divHome = document.createElement('div');
+  const theBody = document.querySelector('body');
+  const sectionHome = document.createElement('section');
   const namePage = document.createElement('h1');
   const slogan = document.createElement('p');
   const containerButton = document.createElement('div');
   const buttonSignUp = document.createElement('button');
   const buttonLogIn = document.createElement('button');
 
-  divHome.classList.add('home');
+  sectionHome.classList.add('section_home');
+  theBody.classList.add('home_body');
   namePage.classList.add('title');
   slogan.classList.add('slogan');
   containerButton.classList.add('container_btn');
@@ -25,10 +27,10 @@ export const home = () => {
   buttonSignUp.addEventListener('click', () => onNavigate('/signUp'));
   buttonLogIn.addEventListener('click', () => onNavigate('/logIn'));
 
-  divHome.appendChild(namePage);
-  divHome.appendChild(slogan);
-  divHome.appendChild(containerButton);
+  theBody.appendChild(namePage);
+  sectionHome.appendChild(slogan);
+  sectionHome.appendChild(containerButton);
   containerButton.appendChild(buttonSignUp);
   containerButton.appendChild(buttonLogIn);
-  return divHome;
+  return sectionHome;
 };

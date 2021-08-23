@@ -1,8 +1,8 @@
 /* eslint-disable import/no-cycle */
-import { home } from './pages/home.js';
+import { home } from './components/home.js';
 // eslint-disable-next-line import/no-cycle
-import { logIn } from './pages/logIn.js';
-import { signUp } from './pages/signUp.js';
+import { logIn } from './components/logIn.js';
+import { signUp } from './components/signUp.js';
 
 const rootDiv = document.getElementById('root');
 
