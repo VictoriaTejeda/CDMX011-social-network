@@ -2,8 +2,6 @@
 import { onNavigate } from '../index.js';
 
 export const signUp = () => {
-
-
   const theBody = document.querySelector('body');
   const sectionSignUp = document.createElement('section');
   const divForm = document.createElement('div');
@@ -94,5 +92,4 @@ export const signUp = () => {
   divForm.appendChild(formSignUp);
 
   return sectionSignUp;
-
 };
