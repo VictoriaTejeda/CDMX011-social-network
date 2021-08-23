@@ -2,6 +2,7 @@
 import { onNavigate } from '../index.js';
 
 export const signUp = () => {
+  document.body.style.backgroundImage = 'url(../images/signUp.png)';
   const theBody = document.querySelector('body');
   const sectionSignUp = document.createElement('section');
   const divForm = document.createElement('div');
@@ -50,7 +51,7 @@ export const signUp = () => {
   tagHrefReturnHome.addEventListener('click', (e) => {
     e.preventDefault();
     onNavigate('/');
-    // document.body.style.backgroundImage = 'url(../images/deskop-background.png)';
+    // ;
   });
 
   buttonGoogle.classList.add('btn_google');

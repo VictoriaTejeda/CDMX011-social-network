@@ -17,7 +17,7 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(../images/fondo_secodpage.jpg);
+    /*background-image: url(../images/fondo_secodpage.jpg);*/
 }
 
 /* menu de navegacion */
@@ -183,7 +183,7 @@ nav li a i {
     align-items: center;
     justify-content: space-evenly;
     background-position: center;
-    background-image: url(../images/signUp.png);
+    /*background-image: url(../images/signUp.png);*/
     background-size: cover;
   }
   nav {
@@ -246,7 +246,7 @@ nav li a i {
 .home_body {
   display: flex;
   flex-direction: column;
-  background-image: url(../images/home.png);
+  /*background-image: url(../images/home.png);*/
   background-position: center;
   background-size: cover;
   margin: 0;
