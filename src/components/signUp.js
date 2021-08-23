@@ -2,9 +2,15 @@
 import { onNavigate } from '../index.js';
 
 export const signUp = () => {
-  document.body.style.background = "url('signUp.png')";
-  const divSignUp = document.createElement('div');
+  const theBody = document.querySelector('body');
+  const sectionSignUp = document.createElement('section');
+  const divForm = document.createElement('div');
   const formSignUp = document.createElement('form');
+  const tagNav = document.createElement('nav');
+  const tagUl = document.createElement('ul');
+  const tagLi = document.createElement('li');
+  const tagHrefReturnHome = document.createElement('a');
+  const tagI = document.createElement('i');
   const br = document.createElement('br');
   const labelEmail = document.createElement('label');
   const labelPassword = document.createElement('label');
@@ -13,13 +19,17 @@ export const signUp = () => {
   const inputPassword = document.createElement('input');
   const confirmPassword = document.createElement('input');
   const buttonSignup = document.createElement('button');
-  const buttonReturn = document.createElement('button');
   const buttonGoogle = document.createElement('button');
 
   const emailLabel = document.createTextNode('E-mail');
   const passwordLabel = document.createTextNode('Password');
   const confirmLabel = document.createTextNode('Confirm password');
 
+  tagI.classList.add('fas', 'fa-home');
+  tagHrefReturnHome.setAttribute('href', '#');
+  theBody.classList.add('signUp-body');
+  sectionSignUp.setAttribute('id', 'signSection');
+  divForm.setAttribute('id', 'divFormSignUp');
   formSignUp.setAttribute('id', 'signUpForm');
   inputEmail.setAttribute('type', 'email');
   inputEmail.setAttribute('id', 'emailSigUp');
@@ -37,18 +47,28 @@ export const signUp = () => {
   labelConfirm.setAttribute('for', 'idConfirmSignUp');
   labelConfirm.setAttribute('id', 'signUpConfirmId');
 
-  buttonReturn.classList.add('btn_return');
+  tagHrefReturnHome.addEventListener('click', (e) => {
+    e.preventDefault();
+    onNavigate('/');
+    // document.body.style.backgroundImage = 'url(../images/deskop-background.png)';
+  });
+
   buttonGoogle.classList.add('btn_google');
 
   buttonSignup.textContent = 'Sing Up';
-  buttonReturn.textContent = 'Home';
+  // buttonReturn.textContent = 'Home';
   buttonGoogle.textContent = 'Sign Up with Google';
 
-  buttonReturn.addEventListener('click', () => onNavigate('/'));
+  // buttonReturn.addEventListener('click', () => onNavigate('/'));
 
   labelEmail.appendChild(emailLabel);
   labelPassword.appendChild(passwordLabel);
   labelConfirm.appendChild(confirmLabel);
+
+  tagNav.appendChild(tagUl);
+  tagUl.appendChild(tagLi);
+  tagLi.appendChild(tagHrefReturnHome);
+  tagHrefReturnHome.appendChild(tagI);
 
   formSignUp.appendChild(labelEmail);
   formSignUp.appendChild(br.cloneNode());
@@ -66,8 +86,10 @@ export const signUp = () => {
   formSignUp.appendChild(br.cloneNode());
   formSignUp.appendChild(buttonGoogle);
 
-  divSignUp.appendChild(buttonReturn);
-  divSignUp.appendChild(formSignUp);
+  // sectionSignUp.appendChild(buttonReturn);
+  sectionSignUp.appendChild(tagNav);
+  sectionSignUp.appendChild(divForm);
+  divForm.appendChild(formSignUp);
 
-  return divSignUp;
+  return sectionSignUp;
 };
