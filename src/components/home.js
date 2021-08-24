@@ -19,10 +19,10 @@ export const home = () => {
   buttonSignUp.classList.add('btn_sign_up');
   buttonLogIn.classList.add('btn_log_in');
 
-  buttonSignUp.textContent = 'Sign Up';
-  buttonLogIn.textContent = 'Log In';
+  buttonSignUp.textContent = 'Regístrate';
+  buttonLogIn.textContent = 'Inicia sesión';
   namePage.innerHTML = 'Boo!';
-  slogan.innerHTML = 'Aqui se respira el miedo...cuentame tu historia.';
+  slogan.innerHTML = 'Aquí se respira el miedo...cuentame tu historia.';
 
   buttonSignUp.addEventListener('click', () => onNavigate('/signUp'));
   buttonLogIn.addEventListener('click', () => onNavigate('/logIn'));
