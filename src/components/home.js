@@ -1,9 +1,8 @@
-
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../index.js';
 
 export const home = () => {
-
+  document.body.style.backgroundImage = 'url(../images/home.png)';
   const theBody = document.querySelector('body');
   const sectionHome = document.createElement('section');
   const namePage = document.createElement('h1');
@@ -28,5 +27,11 @@ export const home = () => {
   buttonSignUp.addEventListener('click', () => onNavigate('/signUp'));
   buttonLogIn.addEventListener('click', () => onNavigate('/logIn'));
 
+  theBody.appendChild(namePage);
+  sectionHome.appendChild(slogan);
+  sectionHome.appendChild(containerButton);
+  containerButton.appendChild(buttonSignUp);
+  containerButton.appendChild(buttonLogIn);
 
+  return sectionHome;
 };

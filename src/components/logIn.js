@@ -2,7 +2,7 @@
 import { onNavigate } from '../index.js';
 
 export const logIn = () => {
-
+  document.body.style.backgroundImage = 'url(../images/signUp.png)';
   const theBody = document.querySelector('body');
   const divLogIn = document.createElement('section');
   const tagNav = document.createElement('nav');
@@ -74,7 +74,6 @@ export const logIn = () => {
   buttonGoogle.appendChild(divLoginGoogle);
   divLoginGoogle.appendChild(spanDivLoginGoogle);
   divLoginGoogle.appendChild(imagenButton);
-
 
   return divLogIn;
 };

@@ -34,4 +34,4 @@ window.onpopstate = () => {
   rootDiv.appendChild(component());
 };
 
-rootDiv.appendChild(component());
+rootDiv.appendChild(routes[window.location.pathname]());
