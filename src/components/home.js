@@ -4,14 +4,14 @@ import { onNavigate } from '../index.js';
 export const home = () => {
   document.body.style.backgroundImage = 'url(../images/home.png)';
   const theBody = document.querySelector('body');
-  const sectionHome = document.createElement('section');
+  const divHome = document.createElement('div');
   const namePage = document.createElement('h1');
   const slogan = document.createElement('p');
   const containerButton = document.createElement('div');
   const buttonSignUp = document.createElement('button');
   const buttonLogIn = document.createElement('button');
 
-  sectionHome.classList.add('section_home');
+  divHome.classList.add('section_home');
   theBody.classList.add('home_body');
   namePage.classList.add('title');
   slogan.classList.add('slogan');
@@ -27,11 +27,11 @@ export const home = () => {
   buttonSignUp.addEventListener('click', () => onNavigate('/signUp'));
   buttonLogIn.addEventListener('click', () => onNavigate('/logIn'));
 
-  sectionHome.appendChild(namePage);
-  sectionHome.appendChild(slogan);
-  sectionHome.appendChild(containerButton);
+  divHome.appendChild(namePage);
+  divHome.appendChild(slogan);
+  divHome.appendChild(containerButton);
   containerButton.appendChild(buttonSignUp);
   containerButton.appendChild(buttonLogIn);
 
-  return sectionHome;
+  return divHome;
 };
