@@ -1,61 +1,83 @@
 /* Styles for sign Up */
 .signUp-body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 0;
-    box-sizing: border-box;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: space-evenly;
-    background-position: center;
-    /*background-image: url(../images/signUp.png);*/
-    background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   }
-  nav {
+  .title_signup {
+    text-align: center;
+    margin: 129px auto;
+    font-family: Love Ya Like A Sister;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+  #signUpNav {
     display: flex;
     justify-content: flex-end; 
     margin-right: 15px;
     margin-top: 15px;
+
   }
   
-  nav ul {
+  #signUpNav ul {
     list-style: none;
   }
   
-  nav li a {
+  #signUpNav li a {
     color: white;
     text-decoration: none;
   }
   
-  nav li a i {
+  #signUpNav li a i {
     font-size: 30px;
   }
   
   #signUpForm {
-  width: 300px;
-  height: 300px;
+  position: absolute;
+  width: 85%;
+  height: 350px;
   background: rgba(0, 0, 0, 0.34);
   border-radius: 10px;
   font-family: "Love Ya Like A Sister", cursive;
   color: #ffffff;
+  margin-bottom: 15px;
+  justify-content: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    top:  42%;
   }
   #signUpForm label {
+    display: block;
+    width: 90%;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 25px;
-    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
   }
   #signUpForm input {
-    font-size: 15px;
-    border: 0;
-    border-bottom: 3px solid#FFFFFF;
-    background-color: rgba(0, 0, 0, 0);
-    width: 250px;
-    height: 25px;
-    margin-bottom: 12px;
-    margin-top: 5px;
+    display: block;
+    width: 90%;
+    height: 25px ;
+    margin: 0 auto;
+    margin-top: 11px;
+    margin-bottom: 10px;
+    font-family: Love Ya Like A Sister;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
   }
   #submitSignUp {
     width: 118px;
