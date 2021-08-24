@@ -1,16 +1,10 @@
 /* Styles home*/
 
 .home_body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 0;
-    box-sizing: border-box;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: space-evenly;
-    background-position: center;
-    background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   }
   .title,
   .slogan {

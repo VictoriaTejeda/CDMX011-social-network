@@ -5,14 +5,14 @@ export const signUp = () => {
   document.body.style.backgroundImage = 'url(../images/signUp.png)';
   const theBody = document.querySelector('body');
   const sectionSignUp = document.createElement('section');
-  const divForm = document.createElement('div');
+  const signUpTitle = document.createElement('h1');
+  // const divForm = document.createElement('div');
   const formSignUp = document.createElement('form');
   const tagNav = document.createElement('nav');
   const tagUl = document.createElement('ul');
   const tagLi = document.createElement('li');
   const tagHrefReturnHome = document.createElement('a');
   const tagI = document.createElement('i');
-  const br = document.createElement('br');
   const labelEmail = document.createElement('label');
   const labelPassword = document.createElement('label');
   const labelConfirm = document.createElement('label');
@@ -21,16 +21,21 @@ export const signUp = () => {
   const confirmPassword = document.createElement('input');
   const buttonSignup = document.createElement('button');
   const buttonGoogle = document.createElement('button');
-
+  // const divContainerMedal = document.createElement("div");
+  // let img = document.createElement("IMG");
   const emailLabel = document.createTextNode('E-mail');
   const passwordLabel = document.createTextNode('Password');
   const confirmLabel = document.createTextNode('Confirm password');
 
   tagI.classList.add('fas', 'fa-home');
+  signUpTitle.classList.add('title_signup');
   tagHrefReturnHome.setAttribute('href', '#');
+  tagNav.setAttribute('id', 'signUpNav');
+  tagUl.setAttribute('id', 'signUpUl');
+  tagLi.setAttribute('id', 'signUpLi');
   theBody.classList.add('signUp-body');
-  sectionSignUp.setAttribute('id', 'signSection');
-  divForm.setAttribute('id', 'divFormSignUp');
+  sectionSignUp.setAttribute('id', 'signUpSection');
+  // divForm.setAttribute('id', 'divFormSignUp');
   formSignUp.setAttribute('id', 'signUpForm');
   inputEmail.setAttribute('type', 'email');
   inputEmail.setAttribute('id', 'emailSigUp');
@@ -54,6 +59,7 @@ export const signUp = () => {
     // ;
   });
 
+  signUpTitle.textContent = 'Sign Up';
   buttonGoogle.classList.add('btn_google');
 
   buttonSignup.textContent = 'Sing Up';
@@ -72,25 +78,19 @@ export const signUp = () => {
   tagHrefReturnHome.appendChild(tagI);
 
   formSignUp.appendChild(labelEmail);
-  formSignUp.appendChild(br.cloneNode());
   formSignUp.appendChild(inputEmail);
-  formSignUp.appendChild(br.cloneNode());
   formSignUp.appendChild(labelPassword);
-  formSignUp.appendChild(br.cloneNode());
   formSignUp.appendChild(inputPassword);
-  formSignUp.appendChild(br.cloneNode());
   formSignUp.appendChild(labelConfirm);
-  formSignUp.appendChild(br.cloneNode());
   formSignUp.appendChild(confirmPassword);
-  formSignUp.appendChild(br.cloneNode());
   formSignUp.appendChild(buttonSignup);
-  formSignUp.appendChild(br.cloneNode());
   formSignUp.appendChild(buttonGoogle);
 
   // sectionSignUp.appendChild(buttonReturn);
   sectionSignUp.appendChild(tagNav);
-  sectionSignUp.appendChild(divForm);
-  divForm.appendChild(formSignUp);
+  sectionSignUp.appendChild(signUpTitle);
+  sectionSignUp.appendChild(formSignUp);
+  // divForm.appendChild(formSignUp);
 
   return sectionSignUp;
 };
