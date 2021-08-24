@@ -27,7 +27,7 @@ export const home = () => {
   buttonSignUp.addEventListener('click', () => onNavigate('/signUp'));
   buttonLogIn.addEventListener('click', () => onNavigate('/logIn'));
 
-  theBody.appendChild(namePage);
+  sectionHome.appendChild(namePage);
   sectionHome.appendChild(slogan);
   sectionHome.appendChild(containerButton);
   containerButton.appendChild(buttonSignUp);
