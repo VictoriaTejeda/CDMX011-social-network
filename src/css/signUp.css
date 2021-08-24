@@ -6,8 +6,7 @@
   background-size: cover;
   }
   .title_signup {
-    text-align: center;
-    margin: 129px auto;
+    margin: 50px;
     font-family: Love Ya Like A Sister;
     font-style: normal;
     font-weight: normal;
@@ -39,20 +38,21 @@
   }
   
   #signUpForm {
-  position: absolute;
-  width: 85%;
-  height: 350px;
-  background: rgba(0, 0, 0, 0.34);
-  border-radius: 10px;
-  font-family: "Love Ya Like A Sister", cursive;
-  color: #ffffff;
-  margin-bottom: 15px;
-  justify-content: center;
+    position: absolute;
+    width: 85%;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.34);
+    border-radius: 10px;
+    font-family: "Love Ya Like A Sister", cursive;
+    color: #ffffff;
+    margin-bottom: 15px;
+    justify-content: center;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
-    top:  42%;
+    margin-bottom: 30px;
+    top: 42%;
   }
   #signUpForm label {
     display: block;
@@ -71,7 +71,7 @@
     margin: 0 auto;
     margin-top: 11px;
     margin-bottom: 10px;
-    font-family: Love Ya Like A Sister;
+    font-family: "Gothic A1", sans-serif;
     border: none;
     outline: none;
     border-bottom: 3px solid white;
@@ -80,12 +80,51 @@
     font-size: 20px;
   }
   #submitSignUp {
+    display: block;
     width: 118px;
     height: 37px;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 16px;
     background: #8f9788;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-      inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), inset 0px 4px 4px rgb(0 0 0 / 25%);
     border-radius: 10px;
+    margin: auto;
     margin-bottom: 10px;
+    margin-top: 17px;
   }
+  #o{
+    display: block;
+    font-family: Love Ya Like A Sister;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    width: 60px;
+    margin: 0 auto;
+  }
+  #btnGoogle{
+    display: flex;
+    font-family: Love Ya Like A Sister;
+    width: 240px;
+    height: 46px;
+    background: rgba(234, 230, 218, 0.13);
+    box-shadow: 0px 3px 3px rgb(0 0 0 / 25%) inset;
+    border-radius: 46.5px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 22px;
+    color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+}
+
+#btnGoogle img {
+    width: 30px;
+    margin-left: 10px;
+}
 
