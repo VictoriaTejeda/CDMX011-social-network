@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-cycle
-import { onNavigate } from '../index.js';
+import { onNavigate } from './utils.js';
 
 export const logIn = () => {
   document.body.style.backgroundImage = 'url(../images/signUp.png)';
@@ -39,13 +39,13 @@ export const logIn = () => {
   inputPassword.setAttribute('type', 'password');
   imagenButton.setAttribute('src', '../images/logo_google.png');
 
-  tagTitle.textContent = 'Log in';
-  tagOr.textContent = '-or-';
-  labelEmail.textContent = 'E-mail';
-  labelPassword.textContent = 'Password';
+  tagTitle.textContent = 'Iniciar sesión';
+  tagOr.textContent = '-o-';
+  labelEmail.textContent = 'Correo electronico';
+  labelPassword.textContent = 'Cotraseña';
   // buttonReturn.textContent = 'Home';
-  buttonLogIn.textContent = 'Log in';
-  spanDivLoginGoogle.textContent = 'Log in  with ';
+  buttonLogIn.textContent = 'Iniciar sesión';
+  spanDivLoginGoogle.textContent = 'Iniciar sesión con ';
 
   // icono home, funcion retorno a home
   tagHrefReturnHome.addEventListener('click', (e) => {
