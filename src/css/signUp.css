@@ -7,7 +7,7 @@
   }
   .title_signup {
     margin: 50px;
-    font-family: Love Ya Like A Sister;
+    font-family: "Love Ya Like A Sister", cursive;
     font-style: normal;
     font-weight: normal;
     font-size: 48px;
@@ -45,11 +45,9 @@
     border-radius: 10px;
     font-family: "Love Ya Like A Sister", cursive;
     color: #ffffff;
-    margin-bottom: 15px;
     justify-content: center;
     left: 0;
     right: 0;
-    bottom: 0;
     margin: auto;
     margin-bottom: 30px;
     top: 42%;
@@ -94,7 +92,7 @@
   }
   #o{
     display: block;
-    font-family: Love Ya Like A Sister;
+    font-family: "Love Ya Like A Sister", cursive;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
@@ -105,7 +103,7 @@
   }
   #btnGoogle{
     display: flex;
-    font-family: Love Ya Like A Sister;
+    font-family: "Love Ya Like A Sister", cursive;
     width: 240px;
     height: 46px;
     background: rgba(234, 230, 218, 0.13);

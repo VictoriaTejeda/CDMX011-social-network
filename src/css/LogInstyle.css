@@ -37,12 +37,11 @@ nav li a i {
 .title_login {
     text-align: center;
     margin: 129px auto;
-    font-family: Love Ya Like A Sister;
+    font-family: "Love Ya Like A Sister", cursive;
     font-style: normal;
     font-weight: normal;
     font-size: 48px;
     line-height: 60px;
-    text-align: center;
     color: #FFFFFF;
 
 }
@@ -53,15 +52,13 @@ nav li a i {
     position: absolute;
     width: 85%;
     height: 315px;
-    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
     top:  42%;
-    font-family: Love Ya Like A Sister;
+    font-family: "Love Ya Like A Sister", cursive;
     color: #FFFFFF;
-    border-radius: 10px;
 }
 
 .sub_contenedor label {
@@ -83,7 +80,7 @@ nav li a i {
     margin: 0 auto;
     margin-top: 11px;
     margin-bottom: 10px;
-    font-family: Love Ya Like A Sister;
+    font-family: "Love Ya Like A Sister", cursive;
     border: none;
     outline: none;
     border-bottom: 3px solid white;
@@ -104,7 +101,7 @@ nav li a i {
     border-radius: 9px;
     width: 35%;
     height: 14%;
-    font-family: Love Ya Like A Sister;
+    font-family: "Love Ya Like A Sister", cursive;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -117,7 +114,7 @@ nav li a i {
 
 .tag_or {
     display: block;
-    font-family: Love Ya Like A Sister;
+    font-family: "Love Ya Like A Sister", cursive;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
@@ -129,7 +126,7 @@ nav li a i {
 
 .btn_google {
     display: block;
-    font-family: Love Ya Like A Sister;
+    font-family: "Love Ya Like A Sister", cursive;
     width: 52%;
     height: 46px;
     background: rgba(234, 230, 218, 0.13);
@@ -154,9 +151,6 @@ nav li a i {
 .btn_google img {
     width: 30px;
     margin-left: 10px;
-}
-
-.btn_google img {
     flex: 0 1 auto;
 }
 
