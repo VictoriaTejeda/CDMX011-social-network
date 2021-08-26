@@ -4,15 +4,14 @@ import { home } from './components/home.js';
 import { logIn } from './components/logIn.js';
 import { signUp } from './components/signUp.js';
 
-const rootDiv = document.getElementById('root');
-
-const routes = {
+export const routes = {
   '/': home,
   '/logIn': logIn,
   '/signUp': signUp,
 };
 
 export const onNavigate = (pathname) => {
+  const rootDiv = document.getElementById('root');
   window.history.pushState(
     {},
     pathname,
@@ -21,17 +20,20 @@ export const onNavigate = (pathname) => {
   while (rootDiv.firstChild) {
     rootDiv.removeChild(rootDiv.firstChild);
   }
-  rootDiv.appendChild(routes[pathname]());
+  rootDiv.appendChild(routes[window.location.pathname]());
 };
 
-let component = routes[window.location.pathname];
-
 window.onpopstate = () => {
+  const rootDiv = document.getElementById('root');
   while (rootDiv.firstChild) {
     rootDiv.removeChild(rootDiv.firstChild);
   }
-  component = routes[window.location.pathname];
-  rootDiv.appendChild(component());
+  rootDiv.appendChild(routes[window.location.pathname]());
 };
 
-rootDiv.appendChild(routes[window.location.pathname]());
+export const render = () => {
+  const rootDiv = document.createElement('div');
+  window.onpopstate();
+  console.log(window.onpopstate());
+  return rootDiv;
+};

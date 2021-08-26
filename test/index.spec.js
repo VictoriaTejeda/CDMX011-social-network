@@ -2,13 +2,43 @@
  * @jest-environment jsdom
  */
 
-// boton en Login en home
-test('test del boton en log in', () => {
-  document.body.innerHTML = `
-  <div id="root"> <button class="btn_log_in">Inicia sesión</button></div>
-  `;
-  const btnLogin = document.getElementsByClassName('btn_log_in');
-  const divRoot = document.getElementById('root');
-  btnLogin.click();
-  expect(divRoot.outerHTML).toBe('<section class="div_login"><nav><ul><li><a href="#"><i class="fas fa-home" aria-hidden="true"></i></a></li></ul></nav><h1 class="title_login">Iniciar sesion</h1><form class="sub_contenedor"><label>Correo electronico</label><input type="text"><label>Contraseña</label><input type="password"><button class="btn_login">Iniciar sesion</button><h4 class="tag_or">-o-</h4><button class="btn_google"><div><span>Iniciar sesion con </span><img src="../images/logo_google.png"></div></button></form></section>');
+import { render } from '../src/index.js';
+
+describe('Coleccion de test sobre el DOM de home', () => {
+  let rootdiv = document.createElement('div');
+  rootdiv.setAttribute('id', 'root');
+  document.body.appendChild(rootdiv);
+  render();
+  rootdiv = document.getElementById('root');
+  test('Test sobre title', () => {
+    const titulo = document.getElementsByClassName('title')[0].textContent;
+    // console.log(titulo, slogan);
+    expect(titulo).toBe('Boo!');
+  });
+
+  test('Test sobre slogan', () => {
+    const slogan = document.getElementsByClassName('slogan')[0].textContent;
+    // console.log(titulo, slogan);
+    expect(slogan).toBe('Aquí se respira el miedo...cuentame tu historia.');
+  });
+
+  test('Test sobre buttons', () => {
+    const divButtons = document.querySelector('.container_btn');
+    // console.log(divButtons.outerHTML);
+    expect(divButtons.outerHTML).toBe('<div class="container_btn"><button class="btn_sign_up">Regístrate</button><button class="btn_log_in">Inicia sesión</button></div>');
+  });
+});
+
+describe('Coleccion de test sobre el DOM de signUp', () => {
+  let rootdiv = document.createElement('div');
+  rootdiv.setAttribute('id', 'root');
+  document.body.appendChild(rootdiv);
+  render('/signUp');
+  rootdiv = document.getElementById('root');
+  test('Test sobre title', () => {
+    const titulo = document.getElementsByClassName('title_signup')[0].textContent;
+    console.log(titulo);
+    // console.log(titulo, slogan);
+    expect(titulo).toBe('Regístrate');
+  });
 });
