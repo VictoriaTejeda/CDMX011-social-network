@@ -4,7 +4,7 @@ import { home } from './components/home.js';
 import { logIn } from './components/logIn.js';
 import { signUp } from './components/signUp.js';
 
-const rootDiv = document.getElementById('root');
+// const rootDiv = document.getElementById('root');
 
 const routes = {
   '/': home,
@@ -13,6 +13,7 @@ const routes = {
 };
 
 export const onNavigate = (pathname) => {
+  const rootDiv = document.getElementById('root'); // la agregué
   window.history.pushState(
     {},
     pathname,
@@ -24,14 +25,24 @@ export const onNavigate = (pathname) => {
   rootDiv.appendChild(routes[pathname]());
 };
 
-let component = routes[window.location.pathname];
+// let component = routes[window.location.pathname];
 
 window.onpopstate = () => {
+  const rootDiv = document.getElementById('root'); // la agregué
   while (rootDiv.firstChild) {
     rootDiv.removeChild(rootDiv.firstChild);
   }
-  component = routes[window.location.pathname];
-  rootDiv.appendChild(component());
+  rootDiv.appendChild(routes[window.location.pathname]());
+  // component = routes[window.location.pathname];
+  // rootDiv.appendChild(component());
 };
-
-rootDiv.appendChild(routes[window.location.pathname]());
+// const inicializar = () => {
+// };
+// rootDiv.appendChild(routes[window.location.pathname]());
+export const render = () => {
+  const rootDiv = document.createElement('div');
+  rootDiv.classList.add('que_gordos');
+  window.onpopstate();
+  // inicializar();
+  return rootDiv;
+};

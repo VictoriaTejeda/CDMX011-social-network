@@ -39,13 +39,13 @@ export const logIn = () => {
   inputPassword.setAttribute('type', 'password');
   imagenButton.setAttribute('src', '../images/logo_google.png');
 
-  tagTitle.textContent = 'Iniciar sesion';
+  tagTitle.textContent = 'Iniciar sesión';
   tagOr.textContent = '-o-';
-  labelEmail.textContent = 'Correo electronico';
+  labelEmail.textContent = 'Correo electrónico';
   labelPassword.textContent = 'Contraseña';
   // buttonReturn.textContent = 'Home';
-  buttonLogIn.textContent = 'Iniciar sesion';
-  spanDivLoginGoogle.textContent = 'Iniciar sesion con ';
+  buttonLogIn.textContent = 'Iniciar sesión';
+  spanDivLoginGoogle.textContent = 'Iniciar sesión con ';
 
   // icono home, funcion retorno a home
   tagHrefReturnHome.addEventListener('click', (e) => {
