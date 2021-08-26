@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+
+/* ==================================================================== STYLES HOME =========================================================================================*/
+.home_body {
+  height: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  align-items: center;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.title,
+.slogan {
+  font-family: "Love Ya Like A Sister", cursive;
+  text-align: center;
+  color: #ffffff;
+}
+
+.section_home {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-around;
+}
+.title {
+  margin-top: 30px;
+  font-size: 90px;
+}
+
+.slogan {
+  display: block;
+  font-size: 50px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 370px;
+}
+
+.container_btn {
+  display: flex;
+  justify-content:center;
+  align-content: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.container_btn button:hover {
+  background-color: #4c5b62;
+  color: ivory;
+}
+.container_btn button:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.btn_sign_up,
+.btn_log_in {
+  font-family: "Gothic A1", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  align-self: center;
+  width: 200px;
+  height: 75px;
+  margin-left: 100px;
+  margin-right: 100px;
+  background: #8f9788;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+ @media screen and (min-width: 360px) and (max-width: 700px) {
+
+  .title {
+    font-size: 60px;
+  }
+  
+  .slogan {
+    font-size: 26px;
+    margin-top: 270px;
+  }
+  
+  .container_btn {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .btn_sign_up,
+  .btn_log_in {
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
+    margin: 0px;
+  }
+  
+ }
+ 
+/*===================================================================================== LOG IN STYLES ==========================================================================*/
+
+* {
+  margin: 0;
+  padding:0;
+}
+
+.login-body {
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* menu de navegacion */
+nav {
+  display: flex;
+  justify-content: flex-end; 
+  margin-right: 15px;
+  margin-top: 15px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav li a i {
+  font-size: 30px;
+}
+
+/* LOG IN  */
+.title_login {
+  text-align: center;
+  margin: 129px auto;
+  font-family: "Love Ya Like A Sister", cursive;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 60px;
+  color: #FFFFFF;
+
+}
+
+.sub_contenedor {
+  background: rgba(0, 0, 0, 0.34);
+  border-radius: 10px;
+  position: absolute;
+  width: 85%;
+  height: 315px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  top:  42%;
+  font-family: "Love Ya Like A Sister", cursive;
+  color: #FFFFFF;
+}
+
+.sub_contenedor label {
+  display: block;
+  width: 90%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 25px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.sub_contenedor input[type="text"],
+.sub_contenedor input[type="password"]{
+  display: block;
+  width: 90%;
+  height: 25px ;
+  margin: 0 auto;
+  margin-top: 11px;
+  margin-bottom: 10px;
+  font-family: "Love Ya Like A Sister", cursive;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+}
+
+.sub_contenedor input[type="password"]{
+  font:small-caption;
+  font-size: 30px;
+}
+
+.btn_login {
+  display: block;
+  background: #8F9788;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25), inset 0px 3px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  width: 35%;
+  height: 14%;
+  font-family: "Love Ya Like A Sister", cursive;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #000000;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 13px auto;
+}
+
+.tag_or {
+  display: block;
+  font-family: "Love Ya Like A Sister", cursive;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  width: 15%;
+  margin: 0 auto;
+}
+
+.btn_google {
+  display: block;
+  font-family: "Love Ya Like A Sister", cursive;
+  width: 70%;
+  height: 46px;
+  background: rgba(234, 230, 218, 0.13);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25) inset;
+  border-radius: 46.5px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+
+.btn_google div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_google img {
+  width: 30px;
+  margin-left: 10px;
+  flex: 0 1 auto;
+}
+
+.btn_google span {
+  flex: 0 1 auto;
+}
+
+/*=========================================================================== STYLES SINGN UP ================================================================================*/
+
+.signUp-body {
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  .title_signup {
+    margin: 50px;
+    font-family: "Love Ya Like A Sister", cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+  #signUpNav {
+    display: flex;
+    justify-content: flex-end; 
+    margin-right: 15px;
+    margin-top: 15px;
+
+  }
+  
+  #signUpNav ul {
+    list-style: none;
+  }
+  
+  #signUpNav li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  #signUpNav li a i {
+    font-size: 30px;
+  }
+  
+  #signUpForm {
+    position: absolute;
+    width: 85%;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.34);
+    border-radius: 10px;
+    font-family: "Love Ya Like A Sister", cursive;
+    color: #ffffff;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-bottom: 30px;
+    top: 42%;
+  }
+  #signUpForm label {
+    display: block;
+    width: 90%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 25px;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+  #signUpForm input {
+    display: block;
+    width: 90%;
+    height: 25px ;
+    margin: 0 auto;
+    margin-top: 11px;
+    margin-bottom: 10px;
+    font-family: "Gothic A1", sans-serif;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+  }
+  #submitSignUp {
+    display: block;
+    width: 118px;
+    height: 37px;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 16px;
+    background: #8f9788;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 17px;
+  }
+  #o{
+    display: block;
+    font-family: "Love Ya Like A Sister", cursive;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    width: 60px;
+    margin: 0 auto;
+  }
+  #btnGoogle{
+    display: flex;
+    font-family: "Love Ya Like A Sister", cursive;
+    width: 240px;
+    height: 46px;
+    background: rgba(234, 230, 218, 0.13);
+    box-shadow: 0px 3px 3px rgb(0 0 0 / 25%) inset;
+    border-radius: 46.5px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 22px;
+    color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+}
+
+#btnGoogle img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+/*============================*/

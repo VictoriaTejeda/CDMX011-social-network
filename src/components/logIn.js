@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-cycle
-import { onNavigate } from '../index.js';
+import { onNavigate } from '../main.js';
 
 export const logIn = () => {
   document.body.style.backgroundImage = 'url(../images/signUp.png)';
