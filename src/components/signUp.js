@@ -1,4 +1,5 @@
-// eslint-disable-next-line import/no-cycle
+/* eslint-disable import/no-cycle */
+import { githubSignin } from '../lib/Auth-GitHub.js';
 import { onNavigate } from '../main.js';
 
 export const signUp = () => {
@@ -22,10 +23,22 @@ export const signUp = () => {
   const o = document.createElement('p');
   const btnGoogleSignUp = document.createElement('button');
   const imgGoogle = document.createElement('IMG');
+  const btnGitSignUp = document.createElement('button');
+  const imgGit = document.createElement('IMG');
 
   const passwordLabel = document.createTextNode('Contraseña');
   const confirmLabel = document.createTextNode('Confirmar contraseña');
   const emailLabel = document.createTextNode('Correo electrónico');
+
+  tagHrefReturnHome.addEventListener('click', (e) => {
+    e.preventDefault();
+    onNavigate('/');
+    // ;
+  });
+  btnGitSignUp.addEventListener('click', (e) => {
+    e.preventDefault();
+    githubSignin();
+  });
 
   theBody.classList.add('signUp-body');
   tagI.classList.add('fas', 'fa-home');
@@ -33,8 +46,6 @@ export const signUp = () => {
 
   tagHrefReturnHome.setAttribute('href', '#');
   tagNav.setAttribute('id', 'signUpNav');
-  tagUl.setAttribute('id', 'signUpUl');
-  tagLi.setAttribute('id', 'signUpLi');
 
   sectionSignUp.setAttribute('id', 'signUpSection');
   formSignUp.setAttribute('id', 'signUpForm');
@@ -44,29 +55,24 @@ export const signUp = () => {
   inputPassword.setAttribute('id', 'idSignUp');
   confirmPassword.setAttribute('type', 'password');
   confirmPassword.setAttribute('id', 'idConfirmSignUp');
+
   buttonSignup.setAttribute('type', 'submit');
   buttonSignup.setAttribute('id', 'submitSignUp');
   o.setAttribute('id', 'o');
   btnGoogleSignUp.setAttribute('id', 'btnGoogle');
   imgGoogle.setAttribute('src', '../images/logo_google.png');
+  btnGitSignUp.setAttribute('id', 'btnGit');
+  imgGit.setAttribute('src', '../images/github.png');
 
   labelEmail.setAttribute('for', 'emailSigUp');
-  labelEmail.setAttribute('id', 'signUpEmail');
   labelPassword.setAttribute('for', 'idSignUp');
-  labelPassword.setAttribute('id', 'signUpId');
   labelConfirm.setAttribute('for', 'idConfirmSignUp');
-  labelConfirm.setAttribute('id', 'signUpConfirmId');
-
-  tagHrefReturnHome.addEventListener('click', (e) => {
-    e.preventDefault();
-    onNavigate('/');
-    // ;
-  });
 
   signUpTitle.textContent = 'Regístrate';
   buttonSignup.textContent = 'Regístrate';
   o.textContent = '-- o --';
-  btnGoogleSignUp.textContent = 'Regístrate con Google';
+  btnGoogleSignUp.textContent = 'Regístrate con';
+  btnGitSignUp.textContent = 'Regístrate con';
 
   labelEmail.appendChild(emailLabel);
   labelPassword.appendChild(passwordLabel);
@@ -86,8 +92,10 @@ export const signUp = () => {
   formSignUp.appendChild(buttonSignup);
   formSignUp.appendChild(o);
   formSignUp.appendChild(btnGoogleSignUp);
+  formSignUp.appendChild(btnGitSignUp);
 
   btnGoogleSignUp.appendChild(imgGoogle);
+  btnGitSignUp.appendChild(imgGit);
 
   sectionSignUp.appendChild(tagNav);
   sectionSignUp.appendChild(signUpTitle);
