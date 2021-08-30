@@ -34,6 +34,10 @@ export const signUp = () => {
     onNavigate('/');
     // ;
   });
+  buttonSignup.addEventListener('click', (e) => {
+    e.preventDefault();
+    onNavigate('/wall');
+  });
 
   theBody.classList.add('signUp-body');
   tagI.classList.add('fas', 'fa-home');

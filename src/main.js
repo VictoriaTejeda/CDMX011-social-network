@@ -3,11 +3,13 @@ import { home } from './components/home.js';
 // eslint-disable-next-line import/no-cycle
 import { logIn } from './components/logIn.js';
 import { signUp } from './components/signUp.js';
+import { wall } from './components/wall.js';
 
 export const routes = {
   '/': home,
   '/logIn': logIn,
   '/signUp': signUp,
+  '/wall': wall,
 };
 
 export const onNavigate = (pathname) => {

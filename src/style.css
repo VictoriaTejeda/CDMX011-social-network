@@ -440,4 +440,22 @@ nav li a i {
   width: 33px;;
   margin-left: 10px;
 }
-/*============================*/
+/*============================*/Wall/*=========*/
+.wall-body {
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  #welcome{
+    display: block;
+    font-family: "Love Ya Like A Sister", cursive;
+    color: beige;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    width: 60px;
+    margin: 0 auto;
+  }
