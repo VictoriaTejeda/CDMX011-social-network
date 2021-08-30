@@ -1,5 +1,4 @@
 /* eslint-disable import/no-cycle */
-import { githubSignin } from '../lib/Auth-GitHub.js';
 import { onNavigate } from '../main.js';
 
 export const signUp = () => {
@@ -34,10 +33,6 @@ export const signUp = () => {
     e.preventDefault();
     onNavigate('/');
     // ;
-  });
-  btnGitSignUp.addEventListener('click', (e) => {
-    e.preventDefault();
-    githubSignin();
   });
 
   theBody.classList.add('signUp-body');
