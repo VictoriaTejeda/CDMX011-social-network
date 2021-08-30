@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
+import { fireBaseSignUp } from '../lib/firebase-signUp.js';
 
 export const signUp = () => {
   document.body.style.backgroundImage = 'url(../images/signUp.png)';
@@ -57,10 +58,19 @@ export const signUp = () => {
   labelConfirm.setAttribute('for', 'idConfirmSignUp');
   labelConfirm.setAttribute('id', 'signUpConfirmId');
 
+  // eventos
+
   tagHrefReturnHome.addEventListener('click', (e) => {
     e.preventDefault();
     onNavigate('/');
     // ;
+  });
+
+  buttonSignup.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('emailSigUp').value;
+    const password = document.getElementById('idSignUp').value;
+    fireBaseSignUp(email, password);
   });
 
   signUpTitle.textContent = 'Regístrate';

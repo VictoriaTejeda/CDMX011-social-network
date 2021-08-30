@@ -11,13 +11,13 @@ export const logIn = () => {
   const tagHrefReturnHome = document.createElement('a');
   const tagI = document.createElement('i');
   const tagTitle = document.createElement('h1');
+  const tagMensaje = document.createElement('h2');
   const formulario = document.createElement('form');
   const labelEmail = document.createElement('label');
   const inputEmail = document.createElement('input');
   const labelPassword = document.createElement('label');
   const inputPassword = document.createElement('input');
   const buttonLogIn = document.createElement('button');
-  // const buttonReturn = document.createElement('button');
   const tagOr = document.createElement('h4');
   const buttonGoogle = document.createElement('button');
   const divLoginGoogle = document.createElement('div');
@@ -28,9 +28,9 @@ export const logIn = () => {
   divLogIn.classList.add('div_login');
   tagI.classList.add('fas', 'fa-home');
   tagTitle.classList.add('title_login');
+  tagMensaje.classList.add('titulo_mensaje');
   formulario.classList.add('sub_contenedor');
   buttonLogIn.classList.add('btn_login');
-  // buttonReturn.classList.add('btn_return');
   tagOr.classList.add('tag_or');
   buttonGoogle.classList.add('btn_google');
 
@@ -40,10 +40,10 @@ export const logIn = () => {
   imagenButton.setAttribute('src', '../images/logo_google.png');
 
   tagTitle.textContent = 'Iniciar sesion';
+  tagMensaje.textContent = 'Pudiste dormir traquilo?';
   tagOr.textContent = '-o-';
   labelEmail.textContent = 'Correo electronico';
   labelPassword.textContent = 'Contraseña';
-  // buttonReturn.textContent = 'Home';
   buttonLogIn.textContent = 'Iniciar sesion';
   spanDivLoginGoogle.textContent = 'Iniciar sesion con ';
 
@@ -61,6 +61,7 @@ export const logIn = () => {
 
   divLogIn.appendChild(tagNav);
   divLogIn.appendChild(tagTitle);
+  divLogIn.appendChild(tagMensaje);
   divLogIn.appendChild(formulario);
 
   formulario.appendChild(labelEmail);
