@@ -23,6 +23,10 @@ export const logIn = () => {
   const divLoginGoogle = document.createElement('div');
   const spanDivLoginGoogle = document.createElement('span');
   const imagenButton = document.createElement('img');
+  const btnGitLogIn = document.createElement('button');
+  const divLogInGit = document.createElement('div');
+  const spanBtnLogInGit = document.createElement('span');
+  const imgGitLogIn = document.createElement('img');
 
   theBody.classList.add('login-body');
   divLogIn.classList.add('div_login');
@@ -30,28 +34,27 @@ export const logIn = () => {
   tagTitle.classList.add('title_login');
   formulario.classList.add('sub_contenedor');
   buttonLogIn.classList.add('btn_login');
-  // buttonReturn.classList.add('btn_return');
   tagOr.classList.add('tag_or');
   buttonGoogle.classList.add('btn_google');
+  btnGitLogIn.classList.add('btn_git');
 
   tagHrefReturnHome.setAttribute('href', '#');
   inputEmail.setAttribute('type', 'text');
   inputPassword.setAttribute('type', 'password');
   imagenButton.setAttribute('src', '../images/logo_google.png');
+  imgGitLogIn.setAttribute('src', '../images/github.png');
 
   tagTitle.textContent = 'Iniciar sesion';
   tagOr.textContent = '-o-';
   labelEmail.textContent = 'Correo electronico';
   labelPassword.textContent = 'Contraseña';
-  // buttonReturn.textContent = 'Home';
   buttonLogIn.textContent = 'Iniciar sesion';
   spanDivLoginGoogle.textContent = 'Iniciar sesion con ';
-
+  spanBtnLogInGit.textContent = 'Iniciar sesion con ';
   // icono home, funcion retorno a home
   tagHrefReturnHome.addEventListener('click', (e) => {
     e.preventDefault();
     onNavigate('/');
-    // document.body.style.backgroundImage = 'url(../images/deskop-background.png)';
   });
 
   tagNav.appendChild(tagUl);
@@ -70,10 +73,14 @@ export const logIn = () => {
   formulario.appendChild(buttonLogIn);
   formulario.appendChild(tagOr);
   formulario.appendChild(buttonGoogle);
+  formulario.appendChild(btnGitLogIn);
 
   buttonGoogle.appendChild(divLoginGoogle);
   divLoginGoogle.appendChild(spanDivLoginGoogle);
   divLoginGoogle.appendChild(imagenButton);
+  btnGitLogIn.appendChild(divLogInGit);
+  divLogInGit.appendChild(spanBtnLogInGit);
+  divLogInGit.appendChild(imgGitLogIn);
 
   return divLogIn;
 };

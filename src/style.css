@@ -136,7 +136,7 @@ nav li a i {
 /* LOG IN  */
 .title_login {
   text-align: center;
-  margin: 129px auto;
+  margin: 70px auto;
   font-family: "Love Ya Like A Sister", cursive;
   font-style: normal;
   font-weight: normal;
@@ -151,11 +151,12 @@ nav li a i {
   border-radius: 10px;
   position: absolute;
   width: 85%;
-  height: 315px;
+  height: 380px;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
+  margin-bottom: 35px;
   top:  42%;
   font-family: "Love Ya Like A Sister", cursive;
   color: #FFFFFF;
@@ -257,6 +258,39 @@ nav li a i {
 .btn_google span {
   flex: 0 1 auto;
 }
+.btn_git {
+  display: block;
+  font-family: "Love Ya Like A Sister", cursive;
+  width: 70%;
+  height: 46px;
+  background: rgba(234, 230, 218, 0.13);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25) inset;
+  border-radius: 46.5px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+
+.btn_git div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_git img {
+  width: 30px;
+  margin-left: 10px;
+  flex: 0 1 auto;
+}
+
+.btn_git span {
+  flex: 0 1 auto;
+}
 
 /*=========================================================================== STYLES SINGN UP ================================================================================*/
 
@@ -267,7 +301,8 @@ nav li a i {
   background-size: cover;
   }
   .title_signup {
-    margin: 50px;
+    margin-top: 35px;
+    margin-bottom: 20px;
     font-family: "Love Ya Like A Sister", cursive;
     font-style: normal;
     font-weight: normal;
@@ -299,19 +334,15 @@ nav li a i {
   }
   
   #signUpForm {
-    position: absolute;
     width: 85%;
-    height: 400px;
+    height: 450px;
     background: rgba(0, 0, 0, 0.34);
     border-radius: 10px;
     font-family: "Love Ya Like A Sister", cursive;
     color: #ffffff;
-    justify-content: center;
-    left: 0;
-    right: 0;
+    padding-top: 5px;
     margin: auto;
-    margin-bottom: 30px;
-    top: 42%;
+    margin-bottom: 20px;
   }
   #signUpForm label {
     display: block;
@@ -386,5 +417,27 @@ nav li a i {
     width: 30px;
     margin-left: 10px;
 }
-
+#btnGit{
+  display: flex;
+  font-family: "Love Ya Like A Sister", cursive;
+  width: 240px;
+  height: 46px;
+  background: rgba(234, 230, 218, 0.13);
+  box-shadow: 0px 3px 3px rgb(0 0 0 / 25%) inset;
+  border-radius: 46.5px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 22px;
+  color: #FFFFFF;
+  align-items: center;
+  justify-content: center;
+}
+#btnGit img {
+  width: 33px;;
+  margin-left: 10px;
+}
 /*============================*/
