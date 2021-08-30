@@ -1,4 +1,5 @@
 /* eslint-disable import/no-cycle */
+import { fireBaseSignUp } from '../lib/signUpFb.js';
 import { onNavigate } from '../main.js';
 
 export const signUp = () => {
@@ -32,11 +33,13 @@ export const signUp = () => {
   tagHrefReturnHome.addEventListener('click', (e) => {
     e.preventDefault();
     onNavigate('/');
-    // ;
   });
+
   buttonSignup.addEventListener('click', (e) => {
     e.preventDefault();
-    onNavigate('/wall');
+    const email = document.getElementById('emailSigUp').value;
+    const password = document.getElementById('idSignUp').value;
+    fireBaseSignUp(email, password);
   });
 
   theBody.classList.add('signUp-body');

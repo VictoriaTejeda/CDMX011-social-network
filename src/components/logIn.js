@@ -1,3 +1,6 @@
+/* eslint-disable import/no-cycle */
+import { logInWhitGoogle, githubSignin } from '../lib/logInFb.js';
+
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
@@ -55,6 +58,16 @@ export const logIn = () => {
   tagHrefReturnHome.addEventListener('click', (e) => {
     e.preventDefault();
     onNavigate('/');
+  });
+
+  buttonGoogle.addEventListener('click', (e) => {
+    e.preventDefault();
+    logInWhitGoogle();
+  });
+
+  btnGitLogIn.addEventListener('click', (e) => {
+    e.preventDefault();
+    githubSignin();
   });
 
   tagNav.appendChild(tagUl);
