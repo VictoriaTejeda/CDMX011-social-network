@@ -34,6 +34,5 @@ window.onpopstate = () => {
 export const render = () => {
   const rootDiv = document.createElement('div');
   window.onpopstate();
-  console.log(window.onpopstate());
   return rootDiv;
 };

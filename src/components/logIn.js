@@ -1,3 +1,4 @@
+import { logInWhitGoogle, logOutUser } from '../lib/authGoogle.js';
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
@@ -51,6 +52,13 @@ export const logIn = () => {
   tagHrefReturnHome.addEventListener('click', (e) => {
     e.preventDefault();
     onNavigate('/');
+    logOutUser();
+    // document.body.style.backgroundImage = 'url(../images/deskop-background.png)';
+  });
+
+  buttonGoogle.addEventListener('click', (e) => {
+    e.preventDefault();
+    logInWhitGoogle();
     // document.body.style.backgroundImage = 'url(../images/deskop-background.png)';
   });
 

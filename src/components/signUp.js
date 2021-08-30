@@ -1,3 +1,4 @@
+import { logInWhitGoogle, logOutUser } from '../lib/authGoogle.js';
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
@@ -60,6 +61,13 @@ export const signUp = () => {
   tagHrefReturnHome.addEventListener('click', (e) => {
     e.preventDefault();
     onNavigate('/');
+    logOutUser();
+    // ;
+  });
+
+  btnGoogleSignUp.addEventListener('click', (e) => {
+    e.preventDefault();
+    logInWhitGoogle();
     // ;
   });
 
