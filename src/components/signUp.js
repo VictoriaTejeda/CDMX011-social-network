@@ -1,5 +1,5 @@
 /* eslint-disable import/no-cycle */
-import { githubSignin } from '../lib/Auth-GitHub.js';
+import { fireBaseSignUp } from '../lib/signUpFb.js';
 import { onNavigate } from '../main.js';
 
 export const signUp = () => {
@@ -33,11 +33,13 @@ export const signUp = () => {
   tagHrefReturnHome.addEventListener('click', (e) => {
     e.preventDefault();
     onNavigate('/');
-    // ;
   });
-  btnGitSignUp.addEventListener('click', (e) => {
+
+  buttonSignup.addEventListener('click', (e) => {
     e.preventDefault();
-    githubSignin();
+    const email = document.getElementById('emailSigUp').value;
+    const password = document.getElementById('idSignUp').value;
+    fireBaseSignUp(email, password);
   });
 
   theBody.classList.add('signUp-body');

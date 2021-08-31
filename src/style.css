@@ -440,4 +440,42 @@ nav li a i {
   width: 33px;;
   margin-left: 10px;
 }
-/*============================*/
+/*============================*/Wall/*=========*/
+.wall-body {
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  #wall{
+    display: block;
+    font-family: "Love Ya Like A Sister", cursive;
+    color: beige;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    width: 60px;
+    margin: 0 auto;
+  }
+
+  .btn_log_out{
+    display: flex;
+  font-family: "Love Ya Like A Sister", cursive;
+  width: 240px;
+  height: 46px;
+  background: rgba(234, 230, 218, 0.13);
+  box-shadow: 0px 3px 3px rgb(0 0 0 / 25%) inset;
+  border-radius: 46.5px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 22px;
+  color: #FFFFFF;
+  align-items: center;
+  justify-content: center;
+  }
