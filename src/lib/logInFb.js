@@ -1,4 +1,6 @@
 /* eslint-disable import/no-cycle */
+import { authStateChanged } from './utils.js';
+// eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
 const firebaseConfig = {
@@ -15,35 +17,21 @@ firebase.initializeApp(firebaseConfig);
 // acceder con una ventana emergente, utilizando signInWithPopup
 export const logInWhitGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-
   firebase
     .auth()
     .signInWithPopup(provider)
     .then((result) => {
-      // eslint-disable-next-line no-alert
-      alert('Bienvenido, cuentame tu historia');
+      // eslint-disable-next-line no-use-before-define
+
       // @type {firebase.auth.OAuthCredential}
       const user = result.user;
       console.log(` Name: ${user.displayName}`);
       console.log(` email: ${user.email}`);
       console.log(` email verificado: ${user.emailVerified}`);
+      onNavigate('/wall');
     // ...
     }).catch((error) => {
     // Handle Errors here.
-      const errorCode = error.code;
-      console.log(` esto es error: ${errorCode}`);
-    });
-};
-
-export const logOutUser = () => {
-  console.log('LogOut');
-  firebase
-    .auth().signOut()
-    .then(() => {
-      // eslint-disable-next-line no-alert
-      alert('Vuelve pronto, Duerme tranquilo si puedes!! ');
-    }).catch((error) => {
-      // Handle Errors here.
       const errorCode = error.code;
       console.log(` esto es error: ${errorCode}`);
     });
@@ -62,6 +50,7 @@ export function githubSignin() {
       onNavigate('/wall');
     }).catch((e) => {
       console.log(e);
+      alert(e.message);
     });
 }
 
