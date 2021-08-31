@@ -1,6 +1,7 @@
 /* eslint-disable import/no-cycle */
 import { fireBaseSignUp } from '../lib/signUpFb.js';
 import { onNavigate } from '../main.js';
+import { validateEmail, validatePassword } from '../lib/validations.js';
 
 export const signUp = () => {
   document.body.style.backgroundImage = 'url(../images/signUp.png)';
@@ -39,6 +40,9 @@ export const signUp = () => {
     e.preventDefault();
     const email = document.getElementById('emailSigUp').value;
     const password = document.getElementById('idSignUp').value;
+    const inputConfirmPassword = document.getElementById('idConfirmSignUp').value;
+    validateEmail(email);
+    validatePassword(password, inputConfirmPassword);
     fireBaseSignUp(email, password);
   });
 
