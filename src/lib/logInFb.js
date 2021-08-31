@@ -20,9 +20,7 @@ export const logInWhitGoogle = () => {
     .auth()
     .signInWithPopup(provider)
     .then((result) => {
-      // eslint-disable-next-line no-alert
-      alert('Bienvenido, cuentame tu historia');
-      // @type {firebase.auth.OAuthCredential}
+      onNavigate('/wall');
       const user = result.user;
       console.log(` Name: ${user.displayName}`);
       console.log(` email: ${user.email}`);
