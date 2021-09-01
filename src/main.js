@@ -25,11 +25,26 @@ export const onNavigate = (pathname) => {
   rootDiv.appendChild(routes[window.location.pathname]());
 };
 
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    onNavigate('/wall');
+    console.log('Toy Logeado');
+  } else {
+    onNavigate('/');
+    console.log('No Logueado');
+  }
+});
+
 window.onpopstate = () => {
   const rootDiv = document.getElementById('root');
   while (rootDiv.firstChild) {
     rootDiv.removeChild(rootDiv.firstChild);
   }
+  firebase.auth().onAuthStateChanged((user) => {
+    if (!user && ((window.location.pathname !== '/') || (window.location.pathname !== '/signUp') || (window.location.pathname !== '/logIn'))) {
+      onNavigate('/');
+    }
+  });
   rootDiv.appendChild(routes[window.location.pathname]());
 };
 

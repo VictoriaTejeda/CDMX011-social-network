@@ -1,6 +1,6 @@
 /* eslint-disable import/no-cycle */
-import { logInWhitGoogle, githubSignin } from '../lib/logInFb.js';
-
+// eslint-disable-next-line import/named
+import { logInWhitGoogle, githubSignin, loginWithEmail } from '../lib/logInFb.js';
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
@@ -40,9 +40,11 @@ export const logIn = () => {
   tagOr.classList.add('tag_or');
   buttonGoogle.classList.add('btn_google');
   btnGitLogIn.classList.add('btn_git');
+  inputEmail.setAttribute('id', 'user');
+  inputPassword.setAttribute('id', 'pass');
 
   tagHrefReturnHome.setAttribute('href', '#');
-  inputEmail.setAttribute('type', 'text');
+  inputEmail.setAttribute('type', 'email');
   inputPassword.setAttribute('type', 'password');
   imagenButton.setAttribute('src', '../images/logo_google.png');
   imgGitLogIn.setAttribute('src', '../images/github.png');
@@ -63,11 +65,19 @@ export const logIn = () => {
   buttonGoogle.addEventListener('click', (e) => {
     e.preventDefault();
     logInWhitGoogle();
+    onNavigate('/wall');
   });
 
   btnGitLogIn.addEventListener('click', (e) => {
     e.preventDefault();
     githubSignin();
+  });
+
+  buttonLogIn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('user').value;
+    const password = document.getElementById('pass').value;
+    loginWithEmail(email, password);
   });
 
   tagNav.appendChild(tagUl);

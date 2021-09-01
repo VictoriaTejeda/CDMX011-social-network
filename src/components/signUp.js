@@ -24,10 +24,6 @@ export const signUp = () => {
   const allReadyLogIn = document.createElement('p');
   const redirectLogIn = document.createElement('a');
   const LogIn = document.createElement('i');
-  /* const btnGoogleSignUp = document.createElement('button');
-  const imgGoogle = document.createElement('IMG');
-  const btnGitSignUp = document.createElement('button');
-  const imgGit = document.createElement('IMG'); */
 
   const passwordLabel = document.createTextNode('Contraseña');
   const confirmLabel = document.createTextNode('Confirmar contraseña');
@@ -72,10 +68,6 @@ export const signUp = () => {
 
   buttonSignup.setAttribute('type', 'submit');
   buttonSignup.setAttribute('id', 'submitSignUp');
-  /* btnGoogleSignUp.setAttribute('id', 'btnGoogle');
-  imgGoogle.setAttribute('src', '../images/logo_google.png');
-  btnGitSignUp.setAttribute('id', 'btnGit');
-  imgGit.setAttribute('src', '../images/github.png'); */
 
   labelEmail.setAttribute('for', 'emailSigUp');
   labelPassword.setAttribute('for', 'idSignUp');
@@ -85,8 +77,6 @@ export const signUp = () => {
   buttonSignup.textContent = 'Regístrate';
   LogIn.textContent = 'Inicia sesión';
   allReadyLogIn.textContent = '¿Ya eres miembro? ';
-  /* btnGoogleSignUp.textContent = 'Regístrate con';
-  btnGitSignUp.textContent = 'Regístrate con'; */
 
   labelEmail.appendChild(emailLabel);
   labelPassword.appendChild(passwordLabel);
@@ -107,11 +97,6 @@ export const signUp = () => {
   formSignUp.appendChild(confirmPassword);
   formSignUp.appendChild(buttonSignup);
   formSignUp.appendChild(allReadyLogIn);
-  /* formSignUp.appendChild(btnGoogleSignUp);
-  formSignUp.appendChild(btnGitSignUp);
-
-  btnGoogleSignUp.appendChild(imgGoogle);
-  btnGitSignUp.appendChild(imgGit); */
 
   sectionSignUp.appendChild(tagNav);
   sectionSignUp.appendChild(signUpTitle);

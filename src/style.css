@@ -28,20 +28,20 @@
 }
 .title {
   margin-top: 30px;
-  font-size: 90px;
+  font-size: 0px;
 }
 
 .slogan {
   display: block;
-  font-size: 50px;
+  font-size: 26px;
   text-align: center;
   margin: 0 auto;
-  margin-top: 370px;
+  margin-top: 270px;
 }
 
 .container_btn {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-content: center;
   width: 100%;
   margin-bottom: 30px;
@@ -61,39 +61,13 @@
   font-size: 22px;
   font-weight: 700;
   align-self: center;
-  width: 200px;
-  height: 75px;
-  margin-left: 100px;
-  margin-right: 100px;
+  width: 150px;
+  height: 50px;
+  margin: 0px;
   background: #8f9788;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
     inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-}
-
-@media screen and (min-width: 360px) and (max-width: 700px) {
-  .title {
-    font-size: 60px;
-  }
-
-  .slogan {
-    font-size: 26px;
-    margin-top: 270px;
-  }
-
-  .container_btn {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-  }
-
-  .btn_sign_up,
-  .btn_log_in {
-    font-size: 20px;
-    width: 150px;
-    height: 50px;
-    margin: 0px;
-  }
 }
 
 /*===================================================================================== LOG IN STYLES ==========================================================================*/
@@ -170,7 +144,7 @@ nav li a i {
   margin-top: 10px;
 }
 
-.sub_contenedor input[type="text"],
+.sub_contenedor input[type="email"],
 .sub_contenedor input[type="password"] {
   display: block;
   width: 90%;
@@ -390,53 +364,6 @@ nav li a i {
 .logIn-redirect i {
   color: #ffffff;
 }
-/* #btnGoogle{
-    display: flex;
-    font-family: "Love Ya Like A Sister", cursive;
-    width: 240px;
-    height: 46px;
-    background: rgba(234, 230, 218, 0.13);
-    box-shadow: 0px 3px 3px rgb(0 0 0 / 25%) inset;
-    border-radius: 46.5px;
-    margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 17px;
-    line-height: 22px;
-    color: #FFFFFF;
-    align-items: center;
-    justify-content: center;
-}
-
-#btnGoogle img {
-    width: 30px;
-    margin-left: 10px;
-}
-#btnGit{
-  display: flex;
-  font-family: "Love Ya Like A Sister", cursive;
-  width: 240px;
-  height: 46px;
-  background: rgba(234, 230, 218, 0.13);
-  box-shadow: 0px 3px 3px rgb(0 0 0 / 25%) inset;
-  border-radius: 46.5px;
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 22px;
-  color: #FFFFFF;
-  align-items: center;
-  justify-content: center;
-}
-#btnGit img {
-  width: 33px;;
-  margin-left: 10px;
-} */
 
 /*============================*/
 Wall/*=========*/
@@ -478,16 +405,38 @@ Wall/*=========*/
   align-items: center;
   justify-content: center;
 }
-/*============================ media querys sign up =========*/
-@media screen and (min-width: 1024px){
-.title_signup{
+@media screen and (min-width: 1024px) {
+  .title {
+    font-size: 90px;
+  }
+
+  .slogan {
+    font-size: 50px;
+    margin-top: 370px;
+  }
+
+  .container_btn {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn_sign_up,
+  .btn_log_in {
+    font-size: 22px;
+    width: 200px;
+    height: 75px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  /*============================ media querys sign up =========*/
+  .title_signup {
     font-size: 65px;
     margin-bottom: 80px;
   }
-#signUpSection{
-  display: flex;
-  width: 50%;
-  margin: auto;
-  flex-direction: column;
-}
+  #signUpSection {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    flex-direction: column;
+  }
 }

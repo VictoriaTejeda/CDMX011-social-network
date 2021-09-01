@@ -1,5 +1,3 @@
-/* eslint-disable import/no-cycle */
-import { authStateChanged } from './utils.js';
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
@@ -25,7 +23,7 @@ export const logInWhitGoogle = () => {
       console.log(` Name: ${user.displayName}`);
       console.log(` email: ${user.email}`);
       console.log(` email verificado: ${user.emailVerified}`);
-      onNavigate('/wall');
+      console.log(user.photoURL);
     // ...
     }).catch((error) => {
     // Handle Errors here.
@@ -51,15 +49,16 @@ export function githubSignin() {
     });
 }
 
-export const fireBaseSignUp = (email, password) => {
-  const auth = getAuth();
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
+export const loginWithEmail = (email, password) => {
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(() => {
+      console.log('estoy logueada');
+      onNavigate('/wall');
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
     });
 };
