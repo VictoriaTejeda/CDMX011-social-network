@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-cycle
 // eslint-disable-next-line import/no-cycle
+// eslint-disable-next-line import/no-cycle
 import { validateEmail, validatePassword } from './validations.js';
 
 export const fireBaseSignUp = (email, password) => {
@@ -10,7 +11,7 @@ export const fireBaseSignUp = (email, password) => {
       // Signed in
       const user = userCredential.user;
       console.log(user.email);
-      console.log(user);
+      console.log(user.name);
       if (validateEmail() === true) {
         validatePassword();
       }
@@ -19,6 +20,5 @@ export const fireBaseSignUp = (email, password) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(errorCode, errorMessage);
-      // ..
     });
 };

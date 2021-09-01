@@ -1,6 +1,4 @@
-/* eslint-disable no-unreachable */
 /* eslint-disable import/no-cycle */
-import { onNavigate } from '../main.js';
 
 export const validateEmail = (inputValue) => {
   // expresion  regular
@@ -9,8 +7,7 @@ export const validateEmail = (inputValue) => {
   if (inputValue.match(mailVerificado)) {
     return true;
   }
-  // eslint-disable-next-line no-alert
-  alert('¡Ha introducido una dirección de correo electrónico no válida! / You have entered an invalid email address!');
+  alert('¡Ha introducido una dirección de correo electrónico no válida!');
   return false;
 };
 
@@ -44,7 +41,6 @@ export const validatePassword = (inputPasswordValue, inputConfirmPasworValue) =>
   if (inputPasswordValue.length >= 8) {
     // eslint-disable-next-line no-alert
     // alert('La contraseña debe tenre por lo menos 8 caracteres');
-    onNavigate('/wall');
     return true;
   }
   // eslint-disable-next-line no-alert

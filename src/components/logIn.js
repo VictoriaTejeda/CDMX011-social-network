@@ -1,6 +1,7 @@
 /* eslint-disable import/no-cycle */
 // eslint-disable-next-line import/named
 import { logInWhitGoogle, githubSignin, loginWithEmail } from '../lib/logInFb.js';
+import { validateEmail } from '../lib/validations.js';
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
@@ -65,7 +66,6 @@ export const logIn = () => {
   buttonGoogle.addEventListener('click', (e) => {
     e.preventDefault();
     logInWhitGoogle();
-    onNavigate('/wall');
   });
 
   btnGitLogIn.addEventListener('click', (e) => {
@@ -77,6 +77,7 @@ export const logIn = () => {
     e.preventDefault();
     const email = document.getElementById('user').value;
     const password = document.getElementById('pass').value;
+    validateEmail(email);
     loginWithEmail(email, password);
   });
 

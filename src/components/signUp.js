@@ -43,9 +43,12 @@ export const signUp = () => {
     const email = document.getElementById('emailSigUp').value;
     const password = document.getElementById('idSignUp').value;
     const inputConfirmPassword = document.getElementById('idConfirmSignUp').value;
-    validateEmail(email);
-    validatePassword(password, inputConfirmPassword);
-    fireBaseSignUp(email, password);
+    // eslint-disable-next-line max-len
+    if (validateEmail(email) === true && (validatePassword(password, inputConfirmPassword) === true)) {
+      fireBaseSignUp(email, password);
+    } else {
+      onNavigate('/signUp');
+    }
   });
 
   signUpTitle.classList.add('title_signup');

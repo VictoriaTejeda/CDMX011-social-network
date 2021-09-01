@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
@@ -24,6 +25,7 @@ export const logInWhitGoogle = () => {
       console.log(` email: ${user.email}`);
       console.log(` email verificado: ${user.emailVerified}`);
       console.log(user.photoURL);
+      onNavigate('/wall');
     // ...
     }).catch((error) => {
     // Handle Errors here.
@@ -60,5 +62,6 @@ export const loginWithEmail = (email, password) => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      alert('esto pasa cuando pongo mal el password ' + errorMessage);
     });
 };
