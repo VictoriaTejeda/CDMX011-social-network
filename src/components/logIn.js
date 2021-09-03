@@ -52,8 +52,8 @@ export const logIn = () => {
   labelEmail.textContent = 'Correo electronico';
   labelPassword.textContent = 'Contraseña';
   buttonLogIn.textContent = 'Iniciar sesion';
-  spanDivLoginGoogle.textContent = 'Iniciar sesion con ';
-  spanBtnLogInGit.textContent = 'Iniciar sesion con ';
+  spanDivLoginGoogle.textContent = 'Ingresa con ';
+  spanBtnLogInGit.textContent = 'Ingresa con ';
   // icono home, funcion retorno a home
   tagHrefReturnHome.addEventListener('click', (e) => {
     e.preventDefault();

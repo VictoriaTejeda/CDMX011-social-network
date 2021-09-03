@@ -19,9 +19,6 @@ export const logInWhitGoogle = () => {
     .auth()
     .signInWithPopup(provider)
     .then((result) => {
-      // eslint-disable-next-line no-use-before-define
-
-      // @type {firebase.auth.OAuthCredential}
       const user = result.user;
       console.log(` Name: ${user.displayName}`);
       console.log(` email: ${user.email}`);
