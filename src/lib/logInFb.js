@@ -1,5 +1,3 @@
-/* eslint-disable import/no-cycle */
-import { authStateChanged } from './utils.js';
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
@@ -55,10 +53,10 @@ export function githubSignin() {
 }
 
 export const fireBaseSignUp = (email, password) => {
-  const auth = getAuth();
-  createUserWithEmailAndPassword(auth, email, password)
+  firebase.auth().signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       const user = userCredential.user;
+      console.log(user);
     })
     .catch((error) => {
       const errorCode = error.code;

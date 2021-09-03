@@ -3,9 +3,12 @@ import { onNavigate } from '../main.js';
 
 // Este método se dispara cada ves que cambia la autentificación, Es para mostra el muro
 export const authStateChanged = () => firebase.auth().onAuthStateChanged((user) => {
+  console.log('Entro a funcion para ver si estoy logueado en google');
   if (user) {
+    console.log('logueado desde authStateChanged');
     return true;
   }
+  console.log('no logueado desde authStateChanged');
   return false;
 });
 
