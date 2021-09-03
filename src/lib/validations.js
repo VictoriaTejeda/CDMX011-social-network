@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-cycle
+import { onNavigate } from '../main.js';
+
 export const validateEmail = (inputValue) => {
   // expresion  regular
   const mailVerificado = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -27,7 +30,7 @@ export const validatePassword = (inputPasswordValue, inputConfirmPasworValue) =>
   // Que no nos hayan dejado un campo vacío
   if (inputPasswordValue.length === 0 || inputConfirmPasworValue.length === 0) {
     // eslint-disable-next-line no-alert
-    alert('Por favor incerte una contraseña valida y su confirmacion');
+    alert('Por favor inserte una contraseña valida y su confirmacion');
     return false;
   }
 
@@ -40,10 +43,9 @@ export const validatePassword = (inputPasswordValue, inputConfirmPasworValue) =>
   // Que la contraseña sea de 8 caracteres por lo menos
   if (inputPasswordValue.length >= 8) {
     // eslint-disable-next-line no-alert
-    alert('La contraseña debe tenre por lo menos 8 caracteres');
-    return false;
+    onNavigate('/wall');
   }
   // eslint-disable-next-line no-alert
   alert('Todo esta correcto');
-  return true;
+  return false;
 };
