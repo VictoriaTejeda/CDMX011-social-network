@@ -4,12 +4,14 @@ import { home } from './components/home.js';
 import { logIn } from './components/logIn.js';
 import { signUp } from './components/signUp.js';
 import { wall } from './components/wall.js';
+import { CreatePost } from './components/post/CreatePost.js';
 
 export const routes = {
   '/': home,
   '/logIn': logIn,
   '/signUp': signUp,
   '/wall': wall,
+  '/add': CreatePost,
 };
 
 export const onNavigate = (pathname) => {
