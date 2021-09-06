@@ -62,6 +62,6 @@ export const loginWithEmail = (email, password) => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert('esto pasa cuando pongo mal el password ' + errorMessage);
+      alert(`esto pasa cuando pongo mal el password ${errorMessage}`);
     });
 };

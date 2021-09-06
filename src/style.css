@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap");
-
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 /* ==================================================================== STYLES HOME =========================================================================================*/
 .home_body {
   height: 100%;
@@ -373,37 +373,95 @@ Wall/*=========*/
   background-repeat: no-repeat;
   background-size: cover;
 }
-#wall {
-  display: block;
+#headerWall {
+  display: flex;
+  align-items: center;
   font-family: "Love Ya Like A Sister", cursive;
   color: beige;
-  font-style: normal;
   font-weight: 600;
   font-size: 20px;
-  line-height: 25px;
-  text-align: center;
-  width: 60px;
-  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-between;
 }
-
-.btn_log_out {
+.navigation {
   display: flex;
-  font-family: "Love Ya Like A Sister", cursive;
-  width: 240px;
-  height: 46px;
-  background: rgba(234, 230, 218, 0.13);
-  box-shadow: 0px 3px 3px rgb(0 0 0 / 25%) inset;
-  border-radius: 46.5px;
-  margin: 0 auto;
+  margin-right: 15px;
+  margin-top: 15px;
+  margin: 10px;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.log_out {
+  background: rgb(0 0 0 / 7%);
   margin-top: 10px;
   margin-bottom: 10px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 22px;
-  color: #ffffff;
+}
+.material-icons-outlined {
+  font-size: 18px;
+}
+#publish {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+}
+#publish div {
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  width: 60px;
+  background-color: transparent;
+}
+#imgUser {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border-radius: 15px;
+  align-self: center;
+}
+#idUser {
+  height: 30%;
+  width: 100%;
+  align-self: center;
+  background-color: white;
+  margin: 5px;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 10%;
+  top: 15%;
+  width: 80%;
+  height: 70%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#post {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin-top: 30px;
+  margin-inline: 5%;
+  font-size: 14px;
+  font-family: "Gothic A1", sans-serif;
+  color: aliceblue;
+}
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 @media screen and (min-width: 1024px) {
   .title {
