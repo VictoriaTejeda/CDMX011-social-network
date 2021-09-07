@@ -1,7 +1,3 @@
-/* eslint-disable import/no-cycle */
-// eslint-disable-next-line import/no-cycle
-import { onNavigate } from '../main.js';
-
 const firebaseConfig = {
   apiKey: 'AIzaSyAmFtZt8XA0kLFHhAglaTLjaFIpJ8NQ1PY',
   authDomain: 'boo-73257.firebaseapp.com',
@@ -14,7 +10,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // acceder con una ventana emergente, utilizando signInWithPopup
-export const logInWhitGoogle = () => {
+export const logInWhitGoogle = (onNavigate) => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase
     .auth()
@@ -35,7 +31,7 @@ export const logInWhitGoogle = () => {
 };
 
 const provider = new firebase.auth.GithubAuthProvider();
-export function githubSignin() {
+export function githubSignin(onNavigate) {
   firebase
     .auth()
     .signInWithPopup(provider)
@@ -51,7 +47,7 @@ export function githubSignin() {
     });
 }
 
-export const loginWithEmail = (email, password) => {
+export const loginWithEmail = (onNavigate, email, password) => {
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)

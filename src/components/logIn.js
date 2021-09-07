@@ -65,12 +65,12 @@ export const logIn = () => {
 
   buttonGoogle.addEventListener('click', (e) => {
     e.preventDefault();
-    logInWhitGoogle();
+    logInWhitGoogle(onNavigate);
   });
 
   btnGitLogIn.addEventListener('click', (e) => {
     e.preventDefault();
-    githubSignin();
+    githubSignin(onNavigate);
   });
 
   buttonLogIn.addEventListener('click', (e) => {
@@ -78,7 +78,7 @@ export const logIn = () => {
     const email = document.getElementById('user').value;
     const password = document.getElementById('pass').value;
     validateEmail(email);
-    loginWithEmail(email, password);
+    loginWithEmail(onNavigate, email, password);
   });
 
   tagNav.appendChild(tagUl);

@@ -13,7 +13,6 @@ export const routes = {
   '/wall': wall,
   '/add': CreatePost,
 };
-
 export const onNavigate = (pathname) => {
   const rootDiv = document.getElementById('root');
   window.history.pushState(
