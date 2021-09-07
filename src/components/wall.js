@@ -33,5 +33,6 @@ export const wall = () => {
   container.querySelector('.modalPost').addEventListener('click', () => {
     onNavigate('/add');
   });
+
   return container;
 };
