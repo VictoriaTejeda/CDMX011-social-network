@@ -46,9 +46,4 @@ window.onpopstate = () => {
   });
   rootDiv.appendChild(routes[window.location.pathname]());
 };
-
-export const render = () => {
-  window.onpopstate();
-  // console.log(window.onpopstate());
-  return rootDiv;
-};
+rootDiv.appendChild(routes[window.location.pathname]());
