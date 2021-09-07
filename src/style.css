@@ -365,8 +365,7 @@ nav li a i {
   color: #ffffff;
 }
 
-/*============================*/
-Wall/*=========*/
+/*============================*/Wall/*=========*/
 .wall-body {
   background-position: center center;
   background-attachment: fixed;
@@ -463,6 +462,23 @@ Wall/*=========*/
   text-decoration: none;
   cursor: pointer;
 }
+
+/*============================posts===================*/
+
+#postForm {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+#postForm label{
+  color: #ffffff;
+}
+#history{
+  max-lines: 1000;
+}
+
+ /*============================ media querys  =========*/
 @media screen and (min-width: 1024px) {
   .title {
     font-size: 90px;
@@ -486,6 +502,7 @@ Wall/*=========*/
     margin-left: 100px;
     margin-right: 100px;
   }
+
   /*============================ media querys sign up =========*/
   .title_signup {
     font-size: 65px;

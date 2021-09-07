@@ -1,5 +1,6 @@
 /* eslint-disable import/no-cycle */
 import { logOutUser } from '../lib/utils.js';
+import { onNavigate } from '../main.js';
 
 export const wall = () => {
   document.body.style.backgroundImage = 'url(../images/post-background.jpeg)';
@@ -22,16 +23,6 @@ export const wall = () => {
   </div>
   <button class= modalPost>Cuéntanos tu aterradora historia</button>
   </section>
-  <div class='modal'>
-    <span class='close'>&times;</span>
-    <form id= 'post'>
-      <label for='title'>Título</label>
-      <input id='title' type='text'>
-      <label for='anecdote'>Historia</label>
-      <textarea id='anecdote' maxlength="1000" rows=22 cols=35>Aquí escribe tu historia.</textarea>
-      <input type='submit' value='Publicar'>
-    </form>
-  </div>
 `;
   container.innerHTML = header;
 
@@ -40,11 +31,7 @@ export const wall = () => {
     logOutUser();
   });
   container.querySelector('.modalPost').addEventListener('click', () => {
-    container.querySelector('.modal').style.display = 'block';
+    onNavigate('/add');
   });
-  container.querySelector('.close').addEventListener('click', () => {
-    container.querySelector('.modal').style.display = 'none';
-  });
-
   return container;
 };
