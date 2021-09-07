@@ -1,11 +1,11 @@
 /* eslint-disable import/no-cycle */
 import { home } from './components/home.js';
-// eslint-disable-next-line import/no-cycle
 import { logIn } from './components/logIn.js';
 import { signUp } from './components/signUp.js';
 import { wall } from './components/wall.js';
 import { CreatePost } from './components/post/CreatePost.js';
 
+const rootDiv = document.getElementById('root');
 export const routes = {
   '/': home,
   '/logIn': logIn,
@@ -14,7 +14,6 @@ export const routes = {
   '/add': CreatePost,
 };
 export const onNavigate = (pathname) => {
-  const rootDiv = document.getElementById('root');
   window.history.pushState(
     {},
     pathname,
@@ -37,7 +36,6 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 
 window.onpopstate = () => {
-  const rootDiv = document.getElementById('root');
   while (rootDiv.firstChild) {
     rootDiv.removeChild(rootDiv.firstChild);
   }
@@ -50,7 +48,6 @@ window.onpopstate = () => {
 };
 
 export const render = () => {
-  const rootDiv = document.createElement('div');
   window.onpopstate();
   // console.log(window.onpopstate());
   return rootDiv;

@@ -92,16 +92,12 @@ nav {
   margin-top: 15px;
 }
 
-nav ul {
-  list-style: none;
-}
-
-nav li a {
+nav a {
   color: white;
   text-decoration: none;
 }
 
-nav li a i {
+nav a i {
   font-size: 30px;
 }
 
@@ -290,16 +286,12 @@ nav li a i {
   margin-top: 15px;
 }
 
-#signUpNav ul {
-  list-style: none;
-}
-
-#signUpNav li a {
+#signUpNav a {
   color: white;
   text-decoration: none;
 }
 
-#signUpNav li a i {
+#signUpNav a i {
   font-size: 30px;
 }
 

@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/named
 import { render } from './main.js';
 
-document.getElementById('root').appendChild(render());
+const div = document.getElementById('root');
+div.appendChild(render());
