@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-cycle
+import { onNavigate } from '../../main.js';
+
 const dbGlobal = firebase.firestore();
 
 // const divCreatePost = document.createElement('div');
@@ -8,14 +11,12 @@ const toPost = (title, history) => dbGlobal.collection('stories').doc().set({
   history,
 });
 
-const getPosts = () => dbGlobal.collection('stories').get();
-
 export const CreatePost = () => {
   const divCreatePost = document.createElement('div');
   const postNodes = `
   <div class="curret-User">
     <img id="img-User">
-    <p id="idUser"></p>
+    <p id="idUser">asustame@panteon.com</p>
   </div>
   <form id="postForm">
     <label for="title">Titulo</label>
@@ -38,37 +39,8 @@ export const CreatePost = () => {
 
     postForm.reset();
     title.focus();
-  });
 
-  divCreatePost.querySelector('.btn-post').addEventListener('click', async () => {
-    const querySnapshot = await getPosts();
-    querySnapshot.forEach((doc) => {
-      // console.log(doc.data());
-
-      const postIt = doc.data();
-      // console.log(doc.data());
-      const newPost = document.createElement('div');
-
-      newPost.innerHTML += `
-      <section>
-        <div class="data-user">
-          <img src="" alt="">
-          <p class="name-user"></p>
-        </div>
-        <div class="data-post">
-          <h3 class="data-title">${postIt.title}</h3>
-          <p class="data-history">${postIt.history}</p>
-        </div>
-        <div class="btn-post">
-          <button class="btn-like"></button>
-          <span id="score"></span>
-          <button class="btn-edit"></button>
-          <button class="btn-delate"></button>
-        </div>
-      </section>
-      `;
-      divCreatePost.appendChild(newPost);
-    });
+    onNavigate('/wall');
   });
 
   return divCreatePost;

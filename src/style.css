@@ -365,7 +365,8 @@ nav li a i {
   color: #ffffff;
 }
 
-/*============================*/Wall/*=========*/
+/*============================*/
+Wall/*=========*/
 .wall-body {
   background-position: center center;
   background-attachment: fixed;
@@ -374,6 +375,10 @@ nav li a i {
 }
 #headerWall {
   display: flex;
+  background-image: url("./images/Header.png");
+  background-size: 90%;
+  background-position-x: center;
+  background-repeat: no-repeat;
   align-items: center;
   font-family: "Love Ya Like A Sister", cursive;
   color: beige;
@@ -381,6 +386,21 @@ nav li a i {
   font-size: 20px;
   flex-direction: row;
   justify-content: space-between;
+  padding-left: 15px;
+}
+#headerWall span {
+  font-family: "Love Ya Like A Sister", cursive;
+  color: beige;
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+#headerWall img {
+  color: beige;
+  font-weight: 600;
+  margin-bottom: 30px;
+  width: 35px;
+  height: 30px;
 }
 .navigation {
   display: flex;
@@ -389,6 +409,7 @@ nav li a i {
   margin: 10px;
   align-items: center;
   width: 100%;
+  height: 50%;
   justify-content: space-between;
 }
 .log_out {
@@ -427,17 +448,18 @@ nav li a i {
   margin: 5px;
 }
 
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1;
-  left: 10%;
-  top: 15%;
-  width: 80%;
-  height: 70%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+.modalPost {
+  font-size: 14px;
+  font-family: "Love Ya Like A Sister", cursive;
+  width: 254px;
+  height: 32px;
+  background: #c4c4c4;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+.modalPost button:hover {
+  background-color: rgb(233, 71, 71) 1;
+  box-shadow: 0px 4px 4px rgba(110, 106, 106, 0.25);
 }
 #post {
   display: flex;
@@ -466,19 +488,102 @@ nav li a i {
 /*============================POST===================*/
 
 #postForm {
- display: flex;
- flex-direction: column;
- align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#postForm label{
+#postForm label {
   color: #ffffff;
 }
-#history{
+#history {
   max-lines: 1000;
 }
+#container-post {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  border: 3px;
+  background: black;
+  color: white;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  width: 90%;
+  height: 90%;
+}
+.data-post {
+  width: 90%;
+  height: 90%;
+  border-style: none;
+  border-color: azure;
+  font-family: system-ui;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background: rgba(211, 211, 211, 0.12);
+  border-radius: 10px;
+}
+.btn-post {
+  display: flex;
+  flex-direction: row;
+}
+.btn-post button {
+  width: 30px;
+  height: 25px;
+}
+.name-user {
+  padding-top: 15px;
+  font-family: system-ui;
+}
 
- /*============================ media querys  =========*/
+.data-title {
+  font-family: system-ui;
+  text-align: center;
+  margin-top: 8px;
+}
+.data-history {
+  font-family: system-ui;
+  text-align: justify;
+  margin-bottom: 8px;
+  margin-top: 5px;
+  padding: 10px;
+}
+.btn-delate {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 10%;
+  height: 48%;
+  padding: 5px;
+  margin: 5px;
+}
+
+.btn-like {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: url('./images/like.png');
+  background-size: cover;
+  float: left;
+  width: 10%;
+  height: 48%;
+  padding: 5px;
+  margin: 5px;
+}
+
+.btn-edit {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 10%;
+  height: 48%;
+  padding: 5px;
+  margin: 5px;
+}
+
+/*============================ media querys  =========*/
 @media screen and (min-width: 1024px) {
   .title {
     font-size: 90px;

@@ -2,6 +2,7 @@
 import { logOutUser } from '../lib/utils.js';
 import { onNavigate } from '../main.js';
 
+const dbGlobal = firebase.firestore();
 export const wall = () => {
   document.body.style.backgroundImage = 'url(../images/post-background.jpeg)';
   const wallBody = document.querySelector('body');
@@ -32,6 +33,55 @@ export const wall = () => {
   });
   container.querySelector('.modalPost').addEventListener('click', () => {
     onNavigate('/add');
+  });
+
+  const newPost = document.createElement('div');
+  const setupPosts = (data) => {
+    if (data.length) {
+      let html = '';
+      data.forEach((doc) => {
+        const post = doc.data();
+        // console.log(post);
+        const templatePost = `
+          <section id="container-post">
+            <div class="data-user">
+              <p class="name-user">asustame@panteon.com</p>
+            </div>
+            <div class="data-post">
+              <h3 class="data-title">${post.title}</h3>
+              <p class="data-history">${post.history}</p>
+            </div>
+            <div class="btn-post">
+              <button class="btn-like"></button>
+              <span id="score"></span>
+              <button class="btn-edit"></button>
+              <button class="btn-delate"></button>
+            </div>
+          </section>
+          `;
+        // console.log();
+        html += templatePost;
+        newPost.innerHTML = html;
+      });
+    } else {
+      newPost.innerHTML = '<h1 class="msn-post">Registrate para ver el contenido</h1>';
+    }
+    container.appendChild(newPost);
+  };
+
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      console.log(` Name: ${user.displayName}`);
+      console.log(` email: ${user.email}`);
+      dbGlobal.collection('stories')
+        .get()
+        .then((snapshot) => {
+          setupPosts(snapshot.docs);
+        });
+    } else {
+      console.log('signout');
+      setupPosts([]);
+    }
   });
 
   return container;
