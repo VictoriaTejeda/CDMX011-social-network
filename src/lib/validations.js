@@ -40,7 +40,6 @@ export const validatePassword = (inputPasswordValue, inputConfirmPasworValue) =>
   // Que la contraseña sea de 8 caracteres por lo menos
   if (inputPasswordValue.length >= 8) {
     // eslint-disable-next-line no-alert
-    // alert('La contraseña debe tenre por lo menos 8 caracteres');
     return true;
   }
   // eslint-disable-next-line no-alert
