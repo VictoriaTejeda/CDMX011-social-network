@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-
+import './globals/fibase.js';
 import { render } from '../src/main.js';
 
 describe('Coleccion de test sobre el DOM de home', () => {

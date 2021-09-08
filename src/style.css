@@ -361,12 +361,12 @@ nav li a i {
   margin-top: 6rem;
   flex-direction: column;
 }
-.logIn-redirect i {
+/*.logIn-redirect i {
   color: #ffffff;
 }
 
 /*============================*/
-Wall/*=========*/
+/*Wall=========*/
 .wall-body {
   background-position: center center;
   background-attachment: fixed;

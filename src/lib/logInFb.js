@@ -34,8 +34,8 @@ export const logInWhitGoogle = () => {
     });
 };
 
-const provider = new firebase.auth.GithubAuthProvider();
 export function githubSignin() {
+  const provider = new firebase.auth.GithubAuthProvider();
   firebase
     .auth()
     .signInWithPopup(provider)
@@ -60,8 +60,9 @@ export const loginWithEmail = (email, password) => {
       onNavigate('/wall');
     })
     .catch((error) => {
-      const errorCode = error.code;
+      // const errorCode = error.code;
       const errorMessage = error.message;
-      alert('esto pasa cuando pongo mal el password ' + errorMessage);
+      // eslint-disable-next-line no-alert
+      alert(`esto pasa cuando pongo mal el password ${errorMessage}`);
     });
 };
