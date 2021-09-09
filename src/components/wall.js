@@ -64,7 +64,7 @@ export const wall = () => {
         newPost.innerHTML = html;
       });
     } else {
-      newPost.innerHTML = '<h1 class="msn-post">Registrate para ver el contenido</h1>';
+      newPost.innerHTML = '';
     }
     container.appendChild(newPost);
   };

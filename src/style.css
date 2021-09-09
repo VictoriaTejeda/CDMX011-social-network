@@ -97,7 +97,7 @@ nav ul {
 }
 
 nav li a {
-  color: white;
+  color: rgb(241, 241, 241);
   text-decoration: none;
 }
 
@@ -119,7 +119,7 @@ nav li a i {
 
 .sub_contenedor {
   background: rgba(0, 0, 0, 0.34);
-  border-radius: 10px;
+  border-radius: 15px;
   position: absolute;
   width: 85%;
   height: 380px;
@@ -143,7 +143,6 @@ nav li a i {
   margin: 0 auto;
   margin-top: 10px;
 }
-
 .sub_contenedor input[type="email"],
 .sub_contenedor input[type="password"] {
   display: block;
@@ -152,7 +151,7 @@ nav li a i {
   margin: 0 auto;
   margin-top: 11px;
   margin-bottom: 10px;
-  font-family: "Love Ya Like A Sister", cursive;
+  font-family: "Gothic A1", sans-serif;
   border: none;
   outline: none;
   border-bottom: 3px solid white;
@@ -171,9 +170,9 @@ nav li a i {
   background: #8f9788;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25),
     inset 0px 3px 3px rgba(0, 0, 0, 0.25);
-  border-radius: 9px;
-  width: 35%;
-  height: 14%;
+  border-radius: 15px;
+  width: 45%;
+  height: 10%;
   font-family: "Love Ya Like A Sister", cursive;
   font-style: normal;
   font-weight: bold;
@@ -196,7 +195,16 @@ nav li a i {
   width: 15%;
   margin: 0 auto;
 }
-
+#register{
+  display: none;
+  width: 95%;
+  margin: auto;
+  font-size: 17px;
+  text-align: center;
+}
+#register i{
+  color: #7bf00de3;
+}
 .btn_google {
   display: block;
   font-family: "Love Ya Like A Sister", cursive;
@@ -295,19 +303,19 @@ nav li a i {
 }
 
 #signUpNav li a {
-  color: white;
+  color: rgb(235, 235, 235);
   text-decoration: none;
 }
 
 #signUpNav li a i {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 #signUpForm {
   width: 85%;
   height: 430px;
   background: rgba(0, 0, 0, 0.34);
-  border-radius: 10px;
+  border-radius: 15px;
   font-family: "Love Ya Like A Sister", cursive;
   color: #ffffff;
   padding-top: 20px;
@@ -339,30 +347,32 @@ nav li a i {
   color: white;
   font-size: 20px;
 }
-#submitSignUp {
+.submit {
   display: block;
-  width: 118px;
-  height: 37px;
-  font-family: "Gothic A1", sans-serif;
-  font-size: 16px;
+  width: 45%;
+  height: 10%;
+  font-family: "Love Ya Like A Sister", cursive;
+  font-size: 18px;
+  font-weight: bold;
   background: #8f9788;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), inset 0px 4px 4px rgb(0 0 0 / 25%);
-  border-radius: 10px;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25),
+    inset 0px 3px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
   margin: auto;
   margin-bottom: 40px;
   margin-top: 17px;
+  cursor:pointer;
 }
 .logIn-redirect {
   display: flex;
   font-family: "Love Ya Like A Sister", cursive;
-  font-style: normal;
-  font-size: 15px;
+  font-size: 20px;
   text-align: center;
   margin-top: 6rem;
   flex-direction: column;
 }
 .logIn-redirect i {
-  color: #ffffff;
+  color: #7bf00de3;
 }
 
 /*============================*/
@@ -492,12 +502,16 @@ Wall/*=========*/
   flex-direction: column;
   align-items: center;
 }
-
+.emptyPost{
+  color: #ffffff;
+  font-size: 15px;
+}
 #postForm label {
   color: #ffffff;
 }
 #history {
-  max-lines: 1000;
+  width: 80%;
+  height: 80%;
 }
 #container-post {
   display: flex;
@@ -540,11 +554,14 @@ Wall/*=========*/
 
 .data-title {
   font-family: system-ui;
+  font-size: 20px;
+  font-weight: 500;
   text-align: center;
   margin-top: 8px;
 }
 .data-history {
   font-family: system-ui;
+  font-size: 20px;
   text-align: justify;
   margin-bottom: 8px;
   margin-top: 5px;

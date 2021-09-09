@@ -3,9 +3,6 @@ import { onNavigate } from '../../main.js';
 
 const dbGlobal = firebase.firestore();
 
-// const divCreatePost = document.createElement('div');
-// const postForm = divCreatePost.querySelector('#postForm');
-
 const toPost = (title, history) => dbGlobal.collection('stories').doc().set({
   title,
   history,
@@ -16,12 +13,13 @@ export const CreatePost = () => {
   const postNodes = `
   <div class="curret-User">
     <img id="img-User">
-    <p id="idUser">asustame@panteon.com</p>
+    <p id="idUser"></p>
   </div>
+  <div class="emptyPost"></div>
   <form id="postForm">
-    <label for="title">Titulo</label>
-    <input id="title"><label for="history">Escribe tu historia</label>
-    <textarea id="history" rows="22" cols="35"></textarea>
+    <label for="title">Título</label>
+    <input id="title"><label for="history">Cuenta tu historia</label>
+    <textarea id="history" rows="22" cols="35" placeholder="Escribe sin límite"></textarea>
     <button class="btn-post">Publicar</button>
   </form>
 `;
@@ -34,13 +32,14 @@ export const CreatePost = () => {
 
     const title = postForm.title;
     const history = postForm.history;
-
-    await toPost(title.value, history.value);
-
-    postForm.reset();
-    title.focus();
-
-    onNavigate('/wall');
+    if (title.value === '' || history.value === '') {
+      divCreatePost.querySelector('.emptyPost').innerHTML = 'escribe algo';
+    } else {
+      await toPost(title.value, history.value);
+      postForm.reset();
+      title.focus();
+      onNavigate('/wall');
+    }
   });
 
   return divCreatePost;
