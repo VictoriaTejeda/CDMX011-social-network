@@ -385,8 +385,8 @@ Wall/*=========*/
 }
 #headerWall {
   display: flex;
-  background-image: url("./images/Header.png");
-  background-size: 90%;
+  background-image: url("./images/Header1.png");
+  background-size: 100%;
   background-position-x: center;
   background-repeat: no-repeat;
   align-items: center;
@@ -566,7 +566,11 @@ Wall/*=========*/
   margin-bottom: 8px;
   margin-top: 5px;
   padding: 10px;
+  width: 90%;
+  height: 300px;
+  overflow: auto;
 }
+
 .btn-delate {
   display: flex;
   justify-content: center;

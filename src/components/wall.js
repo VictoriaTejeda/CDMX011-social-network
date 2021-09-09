@@ -49,7 +49,7 @@ export const wall = () => {
             </div>
             <div class="data-post">
               <h3 class="data-title">${post.title}</h3>
-              <p class="data-history">${post.history}</p>
+              <div class="data-history">${post.history}</div>
             </div>
             <div class="btn-post">
               <button class="btn-like"></button>
