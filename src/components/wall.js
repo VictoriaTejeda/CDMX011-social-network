@@ -3,11 +3,13 @@ import { logOutUser } from '../lib/utils.js';
 import { onNavigate } from '../main.js';
 
 const dbGlobal = firebase.firestore();
+const useri = () => firebase.auth().currentUser;
 export const wall = () => {
   document.body.style.backgroundImage = 'url(../images/post-background.jpg)';
   const wallBody = document.querySelector('body');
   wallBody.classList.add('wall-body');
   const container = document.createElement('div');
+  const Cuser = useri();
   const header = `
   <header id='headerWall'>
     <nav class='navigation'>
@@ -19,8 +21,8 @@ export const wall = () => {
   </header>
   <section id='publish'>
   <div id=curretUser>
-    <img id=imgUser>
-    <p id=idUser></p>
+    <img id=imgUser src='${Cuser.photoURL}'>
+    <p id=idUser>${Cuser.email}</p>
   </div>
     <button class= modalPost>
       <img src='./images/outline_post_add_black_24dp.png' alt='addPost'>

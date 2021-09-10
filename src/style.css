@@ -493,7 +493,15 @@ Wall/*=========*/
   font-family: "Gothic A1", sans-serif;
   color: aliceblue;
 }
+
 /*============================POST===================*/
+.photo {
+  height: 50px;
+    width: 60px;
+    background-color: white;
+    border-radius: 50px;
+    align-self: center;
+}
 
 #postForm {
   display: flex;

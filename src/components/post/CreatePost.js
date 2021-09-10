@@ -3,6 +3,7 @@ import { onNavigate } from '../../main.js';
 
 const dbGlobal = firebase.firestore();
 let usuario = '';
+const useri = () => firebase.auth().currentUser;
 
 const toPost = (title, history, email) => dbGlobal.collection('stories').doc().set({
   title,
@@ -12,10 +13,12 @@ const toPost = (title, history, email) => dbGlobal.collection('stories').doc().s
 
 export const CreatePost = () => {
   const divCreatePost = document.createElement('div');
+  const name = useri();
+  console.log(name);
   const postNodes = `
   <div class="curret-User">
-    <img id="img-User">
-    <p id="idUser"></p>
+    <img id="img-User" class= "photo" src="${name.photoURL}">
+    <p id="idUser">${name.email}</p>
   </div>
   <div class="emptyPost"></div>
   <nav class= "return">
