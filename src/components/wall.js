@@ -22,7 +22,10 @@ export const wall = () => {
     <img id=imgUser>
     <p id=idUser></p>
   </div>
-  <button class= modalPost>Cuéntanos tu aterradora historia</button>
+    <button class= modalPost>
+      <img src='./images/outline_post_add_black_24dp.png' alt='addPost'>
+      <p> 'Comparte tu historia' </p>
+    </button>
   </section>
 `;
   container.innerHTML = header;

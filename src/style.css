@@ -39,6 +39,7 @@
   margin-top: 270px;
 }
 
+
 .container_btn {
   display: flex;
   justify-content: space-evenly;
@@ -47,12 +48,13 @@
   margin-bottom: 30px;
 }
 .container_btn button:hover {
-  background-color: #4c5b62;
-  color: ivory;
+  background-color: #39B5AF;
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 .container_btn button:active {
-  transform: scale(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  background-color: #39B5AF;
+  box-shadow: 0 5px #666;
+  transform: translateY(8px);
 }
 
 .btn_sign_up,
@@ -460,15 +462,19 @@ Wall/*=========*/
   margin: 5px;
 }
 .modalPost{
-  background: rgb(149, 158, 140);
-  font-size: 14px;
-  font-family: "Love Ya Like A Sister", cursive;
-  width: 254px;
-  height: 32px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background: transparent;
+    font-size: 18px;
+    font-family: "Love Ya Like A Sister", cursive;
+    width: 254px;
+    height: 42px;
+    box-shadow: 9px 10px 4px rgb(0 0 0 / 77%);
+    border-radius: 10px;
 }
-.modalPost:hover  {
+.modalPost:hover, .modalPost:active {
   background: rgb(22, 22, 21);
   font-size: 14px;
   color: #ffffff;
@@ -477,6 +483,10 @@ Wall/*=========*/
   height: 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+}
+.modalPost img {
+  height: 35px;
+  width: 30px;
 }
 #post {
   display: flex;
@@ -488,20 +498,6 @@ Wall/*=========*/
   font-family: "Gothic A1", sans-serif;
   color: aliceblue;
 }
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 /*============================POST===================*/
 
 #postForm {
@@ -574,7 +570,7 @@ Wall/*=========*/
   margin-top: 5px;
   padding: 10px;
   width: 90%;
-  height: 300px;
+  max-height: 300px;
   overflow: auto;
 }
 
@@ -612,27 +608,6 @@ Wall/*=========*/
 }
 
 /*============================ media querys  =========*/
-@media screen and (min-width: 360px) {
-  .modalPost{
-    background: rgb(107, 180, 33);
-    font-size: 14px;
-    font-family: "Love Ya Like A Sister", cursive;
-    width: 254px;
-    height: 32px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-  }
-  .modalPost:hover  {
-    background: rgb(204, 204, 33);
-    font-size: 14px;
-    color: #ffffff;
-    font-family: "Love Ya Like A Sister", cursive;
-    width: 254px;
-    height: 32px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-  }
-}
 @media screen and (min-width: 1024px) {
   .title {
     font-size: 90px;
