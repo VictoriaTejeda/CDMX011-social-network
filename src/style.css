@@ -48,11 +48,11 @@
   margin-bottom: 30px;
 }
 .container_btn button:hover {
-  background-color: #39B5AF;
+  background-color: #c6cfcf;
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 .container_btn button:active {
-  background-color: #39B5AF;
+  background-color: #c6cfcf;
   box-shadow: 0 5px #666;
   transform: translateY(8px);
 }
@@ -474,15 +474,10 @@ Wall/*=========*/
     box-shadow: 9px 10px 4px rgb(0 0 0 / 77%);
     border-radius: 10px;
 }
-.modalPost:hover, .modalPost:active {
-  background: rgb(22, 22, 21);
-  font-size: 14px;
-  color: #ffffff;
-  font-family: "Love Ya Like A Sister", cursive;
-  width: 254px;
-  height: 32px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
+.modalPost:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(10px);
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .modalPost img {
   height: 35px;
