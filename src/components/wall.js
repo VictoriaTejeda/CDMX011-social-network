@@ -48,7 +48,7 @@ export const wall = () => {
         const templatePost = `
           <section id="container-post">
             <div class="data-user">
-              <p class="name-user">asustame@panteon.com</p>
+              <p class="name-user">${post.email}</p>
             </div>
             <div class="data-post">
               <h3 class="data-title">${post.title}</h3>

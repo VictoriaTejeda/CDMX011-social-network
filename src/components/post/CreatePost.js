@@ -2,10 +2,12 @@
 import { onNavigate } from '../../main.js';
 
 const dbGlobal = firebase.firestore();
+let usuario = '';
 
-const toPost = (title, history) => dbGlobal.collection('stories').doc().set({
+const toPost = (title, history, email) => dbGlobal.collection('stories').doc().set({
   title,
   history,
+  email,
 });
 
 export const CreatePost = () => {
@@ -45,10 +47,16 @@ export const CreatePost = () => {
     if (title.value === '' || history.value === '') {
       divCreatePost.querySelector('.emptyPost').innerHTML = 'escribe algo';
     } else {
-      await toPost(title.value, history.value);
+      await toPost(title.value, history.value, usuario.email);
       postForm.reset();
       title.focus();
       onNavigate('/wall');
+    }
+  });
+
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      usuario = user;
     }
   });
 
