@@ -16,6 +16,11 @@ export const CreatePost = () => {
     <p id="idUser"></p>
   </div>
   <div class="emptyPost"></div>
+  <nav class= "return">
+    <a href='#' class="btn-return">
+      <img src='./images/outline_return.png' alt='return'>
+    </a>
+  </nav>
   <form id="postForm">
     <label for="title">Título</label>
     <input id="title"><label for="history">Cuenta tu historia</label>
@@ -25,6 +30,11 @@ export const CreatePost = () => {
 `;
 
   divCreatePost.innerHTML = postNodes;
+
+  divCreatePost.querySelector('.btn-return').addEventListener('click', (e) => {
+    e.preventDefault();
+    onNavigate('/wall');
+  });
 
   divCreatePost.querySelector('.btn-post').addEventListener('click', async (e) => {
     e.preventDefault();
