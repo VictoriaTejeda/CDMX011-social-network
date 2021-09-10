@@ -291,6 +291,7 @@ nav li a i {
   text-align: center;
   color: #ffffff;
 }
+
 #signUpNav {
   display: flex;
   justify-content: flex-end;
@@ -381,7 +382,7 @@ Wall/*=========*/
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
 }
 #headerWall {
   display: flex;
@@ -391,7 +392,7 @@ Wall/*=========*/
   background-repeat: no-repeat;
   align-items: center;
   font-family: "Love Ya Like A Sister", cursive;
-  color: beige;
+  color: rgb(7, 7, 7);
   font-weight: 600;
   font-size: 20px;
   flex-direction: row;
@@ -400,13 +401,13 @@ Wall/*=========*/
 }
 #headerWall span {
   font-family: "Love Ya Like A Sister", cursive;
-  color: beige;
+  color: rgb(8, 8, 8);
   font-weight: 600;
   font-size: 30px;
   margin-bottom: 30px;
 }
 #headerWall img {
-  color: beige;
+  color: rgb(10, 10, 10);
   font-weight: 600;
   margin-bottom: 30px;
   width: 35px;
@@ -423,7 +424,7 @@ Wall/*=========*/
   justify-content: space-between;
 }
 .log_out {
-  background: rgb(0 0 0 / 7%);
+  background: rgb(0 0 0 / 0%);
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -432,44 +433,50 @@ Wall/*=========*/
 }
 #publish {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  margin-top: -15px;
 }
 #publish div {
   display: flex;
-  flex-direction: column;
-  height: 60px;
-  width: 60px;
+  height: 80%;
+  width: 80%;
   background-color: transparent;
+  margin-bottom: 15px;
 }
 #imgUser {
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 60px;
   background-color: white;
-  border-radius: 15px;
+  border-radius: 50px;
   align-self: center;
 }
 #idUser {
-  height: 30%;
+  height: 30px;
   width: 100%;
   align-self: center;
   background-color: white;
   margin: 5px;
 }
-
-.modalPost {
+.modalPost{
+  background: rgb(149, 158, 140);
   font-size: 14px;
   font-family: "Love Ya Like A Sister", cursive;
   width: 254px;
   height: 32px;
-  background: #c4c4c4;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
-.modalPost button:hover {
-  background-color: rgb(233, 71, 71) 1;
-  box-shadow: 0px 4px 4px rgba(110, 106, 106, 0.25);
+.modalPost:hover  {
+  background: rgb(22, 22, 21);
+  font-size: 14px;
+  color: #ffffff;
+  font-family: "Love Ya Like A Sister", cursive;
+  width: 254px;
+  height: 32px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }
 #post {
   display: flex;
@@ -605,6 +612,27 @@ Wall/*=========*/
 }
 
 /*============================ media querys  =========*/
+@media screen and (min-width: 360px) {
+  .modalPost{
+    background: rgb(107, 180, 33);
+    font-size: 14px;
+    font-family: "Love Ya Like A Sister", cursive;
+    width: 254px;
+    height: 32px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+  .modalPost:hover  {
+    background: rgb(204, 204, 33);
+    font-size: 14px;
+    color: #ffffff;
+    font-family: "Love Ya Like A Sister", cursive;
+    width: 254px;
+    height: 32px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+}
 @media screen and (min-width: 1024px) {
   .title {
     font-size: 90px;

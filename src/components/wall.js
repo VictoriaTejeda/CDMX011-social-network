@@ -4,7 +4,7 @@ import { onNavigate } from '../main.js';
 
 const dbGlobal = firebase.firestore();
 export const wall = () => {
-  document.body.style.backgroundImage = 'url(../images/post-background.jpeg)';
+  document.body.style.backgroundImage = 'url(../images/post-background.jpg)';
   const wallBody = document.querySelector('body');
   wallBody.classList.add('wall-body');
   const container = document.createElement('div');
@@ -13,7 +13,7 @@ export const wall = () => {
     <nav class='navigation'>
       <span id='Boo!'>Boo!</span>
       <a href='#' class='log_out'>
-        <img src='./images/outline_logout_white_24dp.png' alt='logOut'>
+        <img src='./images/outline_logout_black_24dp.png' alt='logOut'>
       </a>
     </nav>
   </header>

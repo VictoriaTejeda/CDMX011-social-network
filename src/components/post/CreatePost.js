@@ -18,7 +18,7 @@ export const CreatePost = () => {
   <div class="emptyPost"></div>
   <nav class= "return">
     <a href='#' class="btn-return">
-      <img src='./images/outline_return.png' alt='return'>
+      <img src='./images/outline_return_black.png' alt='return'>
     </a>
   </nav>
   <form id="postForm">
