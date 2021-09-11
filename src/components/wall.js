@@ -3,13 +3,13 @@ import { logOutUser } from '../lib/utils.js';
 import { onNavigate } from '../main.js';
 
 const dbGlobal = firebase.firestore();
-const useri = () => firebase.auth().currentUser;
+const userId = () => firebase.auth().currentUser;
 export const wall = () => {
   document.body.style.backgroundImage = 'url(../images/post-background.jpg)';
   const wallBody = document.querySelector('body');
   wallBody.classList.add('wall-body');
   const container = document.createElement('div');
-  const Cuser = useri();
+  const crtUser = userId();
   const header = `
   <header id='headerWall'>
     <nav class='navigation'>
@@ -21,8 +21,8 @@ export const wall = () => {
   </header>
   <section id='publish'>
   <div id=curretUser>
-    <img id=imgUser src='${Cuser.photoURL}'>
-    <p id=idUser>${Cuser.email}</p>
+    <img id=imgUser src="./images/avatar.png" >
+    <p id=idUser>${crtUser.email}</p>
   </div>
     <button class= modalPost>
       <img src='./images/outline_post_add_black_24dp.png' alt='addPost'>
@@ -30,6 +30,7 @@ export const wall = () => {
     </button>
   </section>
 `;
+
   container.innerHTML = header;
 
   container.querySelector('.log_out').addEventListener('click', (e) => {
@@ -57,10 +58,17 @@ export const wall = () => {
               <div class="data-history">${post.history}</div>
             </div>
             <div class="btn-post">
-              <button class="btn-like"></button>
+              <a href='#' class='a-like'>
+               <img class= 'like' src='./images/like.png' alt='like'>
+              </a>
               <span id="score"></span>
-              <button class="btn-edit"></button>
-              <button class="btn-delate"></button>
+              <span id="meAsusta">Me asusta</span>
+              <a href='#' class='a-edit'>
+                <img class='edit' src='./images/edit.png' alt='edit'>
+              </a>
+              <a href='#' class='a-delete'>
+                <img class='delete' src='./images/delete.png' alt='delete'>
+             </a>
             </div>
           </section>
           `;
