@@ -14,6 +14,7 @@ const toPost = (title, history, email) => dbGlobal.collection('stories').doc().s
 export const CreatePost = () => {
   const divCreatePost = document.createElement('div');
   const crtUser = userId();
+
   const postNodes = `
   <div class="curret-User">
     <img id="img-User" class= "photo" src="./images/avatar.png">
