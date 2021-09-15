@@ -1,3 +1,7 @@
+/* eslint-disable import/no-cycle */
+// eslint-disable-next-line import/named
+import { logInWhitGoogle, githubSignin, loginWithEmail } from '../lib/logInFb.js';
+import { validateEmail } from '../lib/validations.js';
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
@@ -17,7 +21,6 @@ export const logIn = () => {
   const labelPassword = document.createElement('label');
   const inputPassword = document.createElement('input');
   const buttonLogIn = document.createElement('button');
-  // const buttonReturn = document.createElement('button');
   const tagOr = document.createElement('h4');
   const buttonGoogle = document.createElement('button');
   const divLoginGoogle = document.createElement('div');
@@ -27,6 +30,9 @@ export const logIn = () => {
   const divLogInGit = document.createElement('div');
   const spanBtnLogInGit = document.createElement('span');
   const imgGitLogIn = document.createElement('img');
+  const divRegister = document.createElement('p');
+  const redirectSignUp = document.createElement('a');
+  const signUp = document.createElement('i');
 
   theBody.classList.add('login-body');
   divLogIn.classList.add('div_login');
@@ -37,9 +43,13 @@ export const logIn = () => {
   tagOr.classList.add('tag_or');
   buttonGoogle.classList.add('btn_google');
   btnGitLogIn.classList.add('btn_git');
+  inputEmail.setAttribute('id', 'user');
+  inputPassword.setAttribute('id', 'pass');
+  divRegister.setAttribute('id', 'register');
+  redirectSignUp.setAttribute('href', '#');
 
   tagHrefReturnHome.setAttribute('href', '#');
-  inputEmail.setAttribute('type', 'text');
+  inputEmail.setAttribute('type', 'email');
   inputPassword.setAttribute('type', 'password');
   imagenButton.setAttribute('src', '../images/logo_google.png');
   imgGitLogIn.setAttribute('src', '../images/github.png');
@@ -49,18 +59,48 @@ export const logIn = () => {
   labelEmail.textContent = 'Correo electronico';
   labelPassword.textContent = 'Contraseña';
   buttonLogIn.textContent = 'Iniciar sesion';
-  spanDivLoginGoogle.textContent = 'Iniciar sesion con ';
-  spanBtnLogInGit.textContent = 'Iniciar sesion con ';
+  spanDivLoginGoogle.textContent = 'Ingresa con ';
+  spanBtnLogInGit.textContent = 'Ingresa con ';
+  divRegister.textContent = '¿Aún no tiene cuenta? ';
+  signUp.textContent = 'Regístrate';
   // icono home, funcion retorno a home
   tagHrefReturnHome.addEventListener('click', (e) => {
     e.preventDefault();
     onNavigate('/');
   });
 
+  buttonGoogle.addEventListener('click', (e) => {
+    e.preventDefault();
+    logInWhitGoogle(onNavigate);
+  });
+
+  btnGitLogIn.addEventListener('click', (e) => {
+    e.preventDefault();
+    githubSignin(onNavigate);
+  });
+
+  buttonLogIn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('user').value;
+    const password = document.getElementById('pass').value;
+    if (email !== '' && password !== '') {
+      validateEmail(email);
+      loginWithEmail(onNavigate, email, password);
+    } else {
+      document.getElementById('register').style.display = 'block';
+    }
+  });
+  signUp.addEventListener('click', (e) => {
+    e.preventDefault();
+    onNavigate('/signUp');
+  });
+
   tagNav.appendChild(tagUl);
   tagUl.appendChild(tagLi);
   tagLi.appendChild(tagHrefReturnHome);
   tagHrefReturnHome.appendChild(tagI);
+  divRegister.appendChild(redirectSignUp);
+  redirectSignUp.appendChild(signUp);
 
   divLogIn.appendChild(tagNav);
   divLogIn.appendChild(tagTitle);
@@ -71,6 +111,7 @@ export const logIn = () => {
   formulario.appendChild(labelPassword);
   formulario.appendChild(inputPassword);
   formulario.appendChild(buttonLogIn);
+  formulario.appendChild(divRegister);
   formulario.appendChild(tagOr);
   formulario.appendChild(buttonGoogle);
   formulario.appendChild(btnGitLogIn);

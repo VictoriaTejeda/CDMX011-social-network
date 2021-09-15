@@ -1,5 +1,7 @@
 /* eslint-disable import/no-cycle */
+import { fireBaseSignUp } from '../lib/signUpFb.js';
 import { onNavigate } from '../main.js';
+import { validateEmail, validatePassword } from '../lib/validations.js';
 
 export const signUp = () => {
   document.body.style.backgroundImage = 'url(../images/signUp.png)';
@@ -19,11 +21,9 @@ export const signUp = () => {
   const inputPassword = document.createElement('input');
   const confirmPassword = document.createElement('input');
   const buttonSignup = document.createElement('button');
-  const o = document.createElement('p');
-  const btnGoogleSignUp = document.createElement('button');
-  const imgGoogle = document.createElement('IMG');
-  const btnGitSignUp = document.createElement('button');
-  const imgGit = document.createElement('IMG');
+  const allReadyLogIn = document.createElement('p');
+  const redirectLogIn = document.createElement('a');
+  const LogIn = document.createElement('i');
 
   const passwordLabel = document.createTextNode('Contraseña');
   const confirmLabel = document.createTextNode('Confirmar contraseña');
@@ -32,15 +32,34 @@ export const signUp = () => {
   tagHrefReturnHome.addEventListener('click', (e) => {
     e.preventDefault();
     onNavigate('/');
-    // ;
+  });
+  redirectLogIn.addEventListener('click', (e) => {
+    e.preventDefault();
+    onNavigate('/logIn');
   });
 
+  buttonSignup.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('emailSigUp').value;
+    const password = document.getElementById('idSignUp').value;
+    const inputConfirmPassword = document.getElementById('idConfirmSignUp').value;
+    // eslint-disable-next-line max-len
+    if (validateEmail(email) === true && (validatePassword(password, inputConfirmPassword) === true)) {
+      fireBaseSignUp(email, password);
+    } else {
+      onNavigate('/signUp');
+    }
+  });
+
+  signUpTitle.classList.add('title_signup');
   theBody.classList.add('signUp-body');
   tagI.classList.add('fas', 'fa-home');
-  signUpTitle.classList.add('title_signup');
+  allReadyLogIn.classList.add('logIn-redirect');
+  buttonSignup.classList.add('submit');
 
   tagHrefReturnHome.setAttribute('href', '#');
   tagNav.setAttribute('id', 'signUpNav');
+  redirectLogIn.setAttribute('href', '#');
 
   sectionSignUp.setAttribute('id', 'signUpSection');
   formSignUp.setAttribute('id', 'signUpForm');
@@ -53,11 +72,6 @@ export const signUp = () => {
 
   buttonSignup.setAttribute('type', 'submit');
   buttonSignup.setAttribute('id', 'submitSignUp');
-  o.setAttribute('id', 'o');
-  btnGoogleSignUp.setAttribute('id', 'btnGoogle');
-  imgGoogle.setAttribute('src', '../images/logo_google.png');
-  btnGitSignUp.setAttribute('id', 'btnGit');
-  imgGit.setAttribute('src', '../images/github.png');
 
   labelEmail.setAttribute('for', 'emailSigUp');
   labelPassword.setAttribute('for', 'idSignUp');
@@ -65,9 +79,8 @@ export const signUp = () => {
 
   signUpTitle.textContent = 'Regístrate';
   buttonSignup.textContent = 'Regístrate';
-  o.textContent = '-- o --';
-  btnGoogleSignUp.textContent = 'Regístrate con';
-  btnGitSignUp.textContent = 'Regístrate con';
+  LogIn.textContent = 'Inicia sesión';
+  allReadyLogIn.textContent = '¿Ya eres miembro? ';
 
   labelEmail.appendChild(emailLabel);
   labelPassword.appendChild(passwordLabel);
@@ -77,6 +90,8 @@ export const signUp = () => {
   tagUl.appendChild(tagLi);
   tagLi.appendChild(tagHrefReturnHome);
   tagHrefReturnHome.appendChild(tagI);
+  allReadyLogIn.appendChild(redirectLogIn);
+  redirectLogIn.appendChild(LogIn);
 
   formSignUp.appendChild(labelEmail);
   formSignUp.appendChild(inputEmail);
@@ -85,12 +100,7 @@ export const signUp = () => {
   formSignUp.appendChild(labelConfirm);
   formSignUp.appendChild(confirmPassword);
   formSignUp.appendChild(buttonSignup);
-  formSignUp.appendChild(o);
-  formSignUp.appendChild(btnGoogleSignUp);
-  formSignUp.appendChild(btnGitSignUp);
-
-  btnGoogleSignUp.appendChild(imgGoogle);
-  btnGitSignUp.appendChild(imgGit);
+  formSignUp.appendChild(allReadyLogIn);
 
   sectionSignUp.appendChild(tagNav);
   sectionSignUp.appendChild(signUpTitle);
