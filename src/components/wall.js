@@ -5,8 +5,6 @@ import { updatebuttons } from './post/eLikes.js';
 
 const dbGlobal = firebase.firestore();
 const userId = () => firebase.auth().currentUser;
-// let userEmail = '';
-// const userId = () => userEmail;
 let idPostToEdit = '';
 
 export const getIdPostToEdit = () => idPostToEdit;
@@ -17,7 +15,7 @@ export const wall = () => {
   wallBody.classList.add('wall-body');
   const container = document.createElement('div');
   const crtUser = userId();
-  // console.log('current User : ' + crtUser);
+  console.log(crtUser.email);
   const header = `
   <header id='headerWall'>
     <nav class='navigation'>
@@ -58,6 +56,7 @@ export const wall = () => {
       data.forEach((doc) => {
         const post = doc.data();
         post.id = doc.id;
+        console.log(post.likes);
         const htmlOfbtnEdit = `<a class='a-edit' data-id='${post.id}'>
                               <img  src='./images/edit.png' alt='edit'>
                               </a>`;

@@ -627,8 +627,10 @@ Wall/*=========*/
   align-items: center;
 }
 .emptyPost {
-  color: #ffffff;
-  font-size: 15px;
+  color: #110f0f;
+  font-size: 22px;
+  font-weight: 400;
+  text-align:center;
 }
 #postForm label {
   color: #110f0f;
@@ -738,6 +740,10 @@ Wall/*=========*/
 
 /*============================ media querys  =========*/
 @media screen and (min-width: 1024px) {
+  #headerWall{
+  background-size: 100%;
+  background-position-y: center;
+  }
   .title {
     font-size: 90px;
   }
@@ -760,7 +766,47 @@ Wall/*=========*/
     margin-left: 100px;
     margin-right: 100px;
   }
+/*============================ media querys wall =========*/
+  #publish{
+    margin-top: 60px;
+  }
+  #headerWall span {
+    
+    font-weight: 900;
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+  #idUser {
+    font-family: system-ui;
+    font-size: 40px;
+    font-weight: 700;
+    height: 70px;
+    width: 90%;
+}
+#imgUser {
+  height: 100px;
+  width: 100px;
+}
 
+#headerWall img {
+  color: rgb(10, 10, 10);
+  font-weight: 600;
+  margin-bottom: 30px;
+  width: 65px;
+  height: 60px;
+}
+
+.modalPost {
+  font-size: 26px;
+  width: 354px;
+  height: 52px;
+  
+}
+.name-user {
+  padding-top: 24px;
+  font-family: system-ui;
+  letter-spacing: 3px;
+}
   /*============================ media querys sign up =========*/
   .title_signup {
     font-size: 65px;

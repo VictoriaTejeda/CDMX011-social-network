@@ -1,4 +1,4 @@
-const db = firebase.firestore();
+const dbGlobal = firebase.firestore();
 const userId = () => firebase.auth().currentUser;
 
 export const UpdateLikes = (id) => {
@@ -6,12 +6,12 @@ export const UpdateLikes = (id) => {
   const idstory = id;
   console.log(`este es mi usuario  ${likesUser.uid}`);
   console.log(`El id que estoy pasando es: ${idstory}`);
-  return db.collection('stories').doc(id).update({
+  return dbGlobal.collection('stories').doc(id).update({
     likes: firebase.firestore.FieldValue.arrayUnion(likesUser.uid),
   })
     .then(() => {
       console.log('Story successfully updated! Increased');
-      return db.collection('stories').doc(id)
+      return dbGlobal.collection('stories').doc(id)
         .get().then((doc) => {
           console.log(doc.data());
           return doc.data();
@@ -23,14 +23,14 @@ export const UpdateUnlikes = (id) => {
   const likesUser = userId();
   console.log(`este es mi usuario  ${likesUser.uid}`);
   console.log(`El id que estoy pasando es: ${id}`);
-  return db.collection('stories').doc(id).update({
+  return dbGlobal.collection('stories').doc(id).update({
     likes: firebase.firestore.FieldValue.arrayRemove(likesUser.uid),
   })
     .then(() => {
       console.log('imprimo');
       console.log(id);
       console.log('Story successfully updated! Increased');
-      return db.collection('stories').doc(id)
+      return dbGlobal.collection('stories').doc(id)
         .get().then((doc) => {
           if (doc.exists) {
             console.log('Document data:', doc.data());
@@ -72,7 +72,7 @@ export function updatebuttons(divbtn) {
       updatebuttons(divActual);
     });
   });
-  newBtnDislike.addEventListener('click', () => {
+  newBtnDislike.addEventListener('click', async () => {
     const unLike = UpdateUnlikes(storyId);
     unLike.then((res) => {
       console.log('resultado de likes dentro del then');
