@@ -1,7 +1,5 @@
-// eslint-disable-next-line import/no-cycle
+/* eslint-disable import/no-cycle */
 import { onNavigate } from '../../main.js';
-// eslint-disable-next-line import/no-cycle
-// eslint-disable-next-line import/named
 import { getIdPostToEdit } from '../wall.js';
 
 const dbGlobal = firebase.firestore();
@@ -46,16 +44,16 @@ export const editPost = () => {
   const crtUser = userId();
   // template formulario
   const htmlTemplateFormEdit = `
+  <nav class= "return">
+    <a class="btn-return">
+      <img src='./images/outline_return_black.png' alt='return'>
+    </a>
+  </nav>
   <div class="curret-User">
     <img id="img-User" class= "photo" src="./images/avatar.png">
     <p id="idUser">${crtUser.email}</p>
   </div>
   <div class="emptyPost"></div>
-  <nav class= "return">
-    <a href='#' class="btn-return">
-      <img src='./images/outline_return_black.png' alt='return'>
-    </a>
-  </nav>
   <form id="postForm">
     <label for="title">Título</label>
     <input id="title"><label for="history">Cuenta tu historia</label>

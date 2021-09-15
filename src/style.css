@@ -39,7 +39,6 @@
   margin-top: 270px;
 }
 
-
 .container_btn {
   display: flex;
   justify-content: space-evenly;
@@ -71,7 +70,65 @@
     inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
+.curret-User {
+  display: flex;
+  align-items: center;
+  margin: 15px 20px 10px 20px;
+}
+.btn-return img {
+  margin-top: 15px;
+  margin-right: 15px;
+}
 
+#postForm label {
+  font-size: 18px;
+  font-family: system-ui;
+  font-weight: 700;
+  color: rgb(15, 13, 13);
+}
+#title {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  border: 3px;
+  background: black;
+  color: white;
+  height: 33px;
+  border-radius: 10px;
+  width: 80%;
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 17px;
+  letter-spacing: 1px;
+  font-family: system-ui;
+}
+#history {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  border: 3px;
+  background: black;
+  color: white;
+  margin: auto;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: justify;
+  font-size: 20px;
+  max-height: 300px;
+}
+
+#history::placeholder {
+  font-size: 16px;
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 800px;
+  color: white;
+  font-family: system-ui;
+  text-align: center;
+}
 /*===================================================================================== LOG IN STYLES ==========================================================================*/
 
 * {
@@ -197,14 +254,14 @@ nav li a i {
   width: 15%;
   margin: 0 auto;
 }
-#register{
+#register {
   display: none;
   width: 95%;
   margin: auto;
   font-size: 17px;
   text-align: center;
 }
-#register i{
+#register i {
   color: #7bf00de3;
 }
 .btn_google {
@@ -364,7 +421,7 @@ nav li a i {
   margin: auto;
   margin-bottom: 40px;
   margin-top: 17px;
-  cursor:pointer;
+  cursor: pointer;
 }
 .logIn-redirect {
   display: flex;
@@ -381,10 +438,13 @@ nav li a i {
 /*============================*/
 Wall/*=========*/
 .wall-body {
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  height: 100%;
 }
 #headerWall {
   display: flex;
@@ -455,24 +515,26 @@ Wall/*=========*/
   align-self: center;
 }
 #idUser {
+  font-family: system-ui;
+  font-size: 18px;
+  font-weight: 650;
   height: 30px;
   width: 100%;
-  align-self: center;
-  background-color: white;
-  margin: 5px;
+  text-align: center;
+  margin: 10px;
 }
-.modalPost{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    background: transparent;
-    font-size: 18px;
-    font-family: "Love Ya Like A Sister", cursive;
-    width: 254px;
-    height: 42px;
-    box-shadow: 9px 10px 4px rgb(0 0 0 / 77%);
-    border-radius: 10px;
+.modalPost {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background: transparent;
+  font-size: 18px;
+  font-family: "Love Ya Like A Sister", cursive;
+  width: 254px;
+  height: 42px;
+  box-shadow: 9px 10px 4px rgb(0 0 0 / 77%);
+  border-radius: 10px;
 }
 .modalPost:active {
   box-shadow: 0 5px #666;
@@ -493,14 +555,70 @@ Wall/*=========*/
   font-family: "Gothic A1", sans-serif;
   color: aliceblue;
 }
-
+.btn-post {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.a-like img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  float: left;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  margin: 5px;
+}
+.a-disLike img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  float: left;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  margin: 5px;
+}
+.meAsusta {
+  margin-left: 10px;
+  color: rgb(185, 14, 14);
+  font-family: "Gothic A1", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+.score {
+  margin-left: 10px;
+  color: rgb(185, 14, 14);
+  font-family: "Gothic A1", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+.a-edit img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 33px;
+  height: 33px;
+  padding: 5px;
+  margin: 5px;
+}
+.a-delete img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 33px;
+  height: 33px;
+  padding: 5px;
+  margin: 5px;
+}
 /*============================POST===================*/
 .photo {
   height: 70px;
-    width: 70px;
-    background-color: white;
-    border-radius: 50px;
-    align-self: center;
+  width: 70px;
+  background-color: white;
+  border-radius: 50px;
+  align-self: center;
 }
 
 #postForm {
@@ -508,12 +626,13 @@ Wall/*=========*/
   flex-direction: column;
   align-items: center;
 }
-.emptyPost{
+.emptyPost {
   color: #ffffff;
   font-size: 15px;
 }
 #postForm label {
-  color: #ffffff;
+  color: #110f0f;
+  margin: 10px;
 }
 #history {
   width: 80%;
@@ -545,17 +664,26 @@ Wall/*=========*/
   background: rgba(211, 211, 211, 0.12);
   border-radius: 10px;
 }
-.btn-post {
+.btns-post, .btn-editPost{
   display: flex;
   flex-direction: row;
+  align-items: center;
+  background: #ccc;
+  color: hsl(0deg 0% 13%);
+  font-size: 18px;
+  font-family: system-ui;
+  width: 90px;
+  height: 35px;
+  box-shadow: 3px 6px 3px rgb(0 0 0 / 77%);
+  border-radius: 10px;
+  margin-bottom: 15px;
+  justify-content: center;
 }
-.btn-post button {
-  width: 30px;
-  height: 25px;
-}
+
 .name-user {
   padding-top: 15px;
   font-family: system-ui;
+  letter-spacing: 2px;
 }
 
 .data-title {

@@ -1,6 +1,7 @@
 /* eslint-disable import/no-cycle */
 import { logOutUser } from '../lib/utils.js';
 import { onNavigate } from '../main.js';
+import { updatebuttons } from './post/eLikes.js';
 
 const dbGlobal = firebase.firestore();
 const userId = () => firebase.auth().currentUser;
@@ -11,7 +12,7 @@ let idPostToEdit = '';
 export const getIdPostToEdit = () => idPostToEdit;
 
 export const wall = () => {
-  document.body.style.backgroundImage = 'url(../images/post-background.jpg)';
+  document.body.style.backgroundImage = 'url(../images/post-background.jpg';
   const wallBody = document.querySelector('body');
   wallBody.classList.add('wall-body');
   const container = document.createElement('div');
@@ -29,7 +30,7 @@ export const wall = () => {
   <section id='publish'>
   <div id=curretUser>
     <img id=imgUser src="./images/avatar.png" >
-    <p id=idUser>${crtUser.email}</p>
+    <p id=idUser>Bienvenido ${crtUser.email}</p>
   </div>
     <button class='modalPost'>
       <img src='./images/outline_post_add_black_24dp.png' alt='addPost'>
@@ -57,11 +58,10 @@ export const wall = () => {
       data.forEach((doc) => {
         const post = doc.data();
         post.id = doc.id;
-        // console.log(post);
-        const htmlOfbtnEdit = `<a class='a-edit' data-id='${doc.id}'>
-                              <img class='edit' src='./images/edit.png' alt='edit'>
+        const htmlOfbtnEdit = `<a class='a-edit' data-id='${post.id}'>
+                              <img  src='./images/edit.png' alt='edit'>
                               </a>`;
-        const htmlOfbtndelete = `<a class='a-delete btn-delete'>
+        const htmlOfbtndelete = `<a class='a-delete'>
         <img class='delete'data-id=${post.id} src='./images/delete.png' alt='delete'>
      </a>`;
 
@@ -75,11 +75,15 @@ export const wall = () => {
               <div class="data-history">${post.history}</div>
             </div>
             <div class="btn-post">
-              <a href='#' class='a-like'>
-               <img class= 'like' src='./images/like.png' alt='like'>
-              </a>
-              <span id="score"></span>
-              <span id="meAsusta">Me asusta</span>
+            <div id="${post.id}" class="btn-post">
+            <a class='a-like'>
+              <img class= 'like' src='./images/like.png' alt='like'>
+            </a>
+            <a class='a-disLike' hidden>
+              <img class= 'dislike' src='./images/dislike.png' alt='like'>
+            </a>
+            
+            <span class="meAsusta">Me asusta</span>
               ${(post.email === crtUser.email) ? htmlOfbtnEdit : ''}
               ${(post.email === crtUser.email) ? htmlOfbtndelete : ''}
             </div>
@@ -97,7 +101,7 @@ export const wall = () => {
           onNavigate('/edit');
         });
       });
-      const btnsDelete = newPost.querySelectorAll('.btn-delete');
+      const btnsDelete = newPost.querySelectorAll('.a-delete');
       btnsDelete.forEach((btn) => {
         btn.addEventListener('click', async (e) => {
           const result = window.confirm('¿Estás seguro de querer eliminar el post?');
@@ -111,8 +115,13 @@ export const wall = () => {
       newPost.innerHTML = '';
     }
     container.appendChild(newPost);
+    const div = document.querySelectorAll('.btn-post');
+    // eslint-disable-next-line max-len
+    // Creamos un listener para cada botón, y ordenamos que cambie la clase cuando se le da clic al botón
+    div.forEach((divbtn) => {
+      updatebuttons(divbtn);
+    });
   };
-
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
