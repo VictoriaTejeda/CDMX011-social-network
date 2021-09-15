@@ -82,7 +82,7 @@ export const wall = () => {
             <a class='a-disLike' hidden>
               <img class= 'dislike' src='./images/dislike.png' alt='like'>
             </a>
-            
+            <span id="${doc.id}" class='score'>${post.likes.length}</span>
             <span class="meAsusta">Me asusta</span>
               ${(post.email === crtUser.email) ? htmlOfbtnEdit : ''}
               ${(post.email === crtUser.email) ? htmlOfbtndelete : ''}

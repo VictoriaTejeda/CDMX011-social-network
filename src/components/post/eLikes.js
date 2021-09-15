@@ -11,31 +11,36 @@ export const UpdateLikes = (id) => {
   })
     .then(() => {
       console.log('Story successfully updated! Increased');
-      return db.collection('stories').doc(idstory)
+      return db.collection('stories').doc(id)
         .get().then((doc) => {
           console.log(doc.data());
-          return doc.data().like.length;
+          return doc.data();
         });
     });
 };
 
 export const UpdateUnlikes = (id) => {
   const likesUser = userId();
-  const idstory = id;
   console.log(`este es mi usuario  ${likesUser.uid}`);
-  console.log(`El id que estoy pasando es: ${idstory}`);
+  console.log(`El id que estoy pasando es: ${id}`);
   return db.collection('stories').doc(id).update({
     likes: firebase.firestore.FieldValue.arrayRemove(likesUser.uid),
   })
     .then(() => {
       console.log('imprimo');
-      console.log(idstory);
+      console.log(id);
       console.log('Story successfully updated! Increased');
-      return db.collection('stories').doc(idstory)
+      return db.collection('stories').doc(id)
         .get().then((doc) => {
-          console.log('get story await a ver ');
-          console.log(doc.data());
-          return doc.data();
+          if (doc.exists) {
+            console.log('Document data:', doc.data());
+          } else {
+          // doc.data() will be undefined in this case
+            console.log('No such document!');
+          } return doc.data();
+        })
+        .catch((error) => {
+          console.log('Error getting document:', error);
         });
     });
 };
@@ -54,12 +59,12 @@ export function updatebuttons(divbtn) {
   const newBtnDislike = btnDislike.cloneNode(true);
   btnDislike.parentNode.replaceChild(newBtnDislike, btnDislike);
   // Agregar listener a boton nuevo
-  newBtnLike.addEventListener('click', () => {
+  newBtnLike.addEventListener('click', async () => {
     const like = UpdateLikes(storyId);
-    like.then((res) => {
+    like.then((resUnlike) => {
       console.log('resultado de likes dentro del then');
-      console.log(res);
-      score.innerHTML = res.likes.length;
+      console.log(resUnlike.likes.length);
+      score.innerHTML = resUnlike.likes.length;
       const divActual = document.getElementById(storyId);
       showLike.hidden = true;
       hideLike.hidden = false;
