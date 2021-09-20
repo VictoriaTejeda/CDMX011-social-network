@@ -8,7 +8,6 @@ const userId = () => firebase.auth().currentUser;
 let idPostToEdit = '';
 
 export const getIdPostToEdit = () => idPostToEdit;
-
 export const wall = () => {
   document.body.style.backgroundImage = 'url(../images/post-background.jpg';
   const wallBody = document.querySelector('body');
@@ -54,9 +53,10 @@ export const wall = () => {
     if (data.length) {
       let html = '';
       data.forEach((doc) => {
+        data.sort((a, b) => a.fecha > b.fecha);
         const post = doc.data();
         post.id = doc.id;
-        console.log(post.likes);
+        console.log(post.fecha);
         const htmlOfbtnEdit = `<a class='a-edit' data-id='${post.id}'>
                               <img  src='./images/edit.png' alt='edit'>
                               </a>`;
@@ -83,12 +83,11 @@ export const wall = () => {
             </a>
             <span id="${doc.id}" class='score'>${post.likes.length}</span>
             <span class="meAsusta">Me asusta</span>
-              ${(post.email === crtUser.email) ? htmlOfbtnEdit : ''}
-              ${(post.email === crtUser.email) ? htmlOfbtndelete : ''}
+              ${post.email === crtUser.email ? htmlOfbtnEdit : ''}
+              ${post.email === crtUser.email ? htmlOfbtndelete : ''}
             </div>
           </section>
           `;
-
         html += templatePost;
         newPost.innerHTML = html;
       });
@@ -103,7 +102,9 @@ export const wall = () => {
       const btnsDelete = newPost.querySelectorAll('.a-delete');
       btnsDelete.forEach((btn) => {
         btn.addEventListener('click', async (e) => {
-          const result = window.confirm('¿Estás seguro de querer eliminar el post?');
+          const result = window.confirm(
+            '¿Estás seguro de querer eliminar el post?',
+          );
           if (result === true) {
             await deletePost(e.target.dataset.id);
             onNavigate('/wall');
@@ -124,16 +125,18 @@ export const wall = () => {
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-    // console.log(` Name: ${user.displayName}`);
-    // console.log(` email: ${user.email}`);
-    // userEmail = user.email;
-      dbGlobal.collection('stories')
+      // console.log(` Name: ${user.displayName}`);
+      // console.log(` email: ${user.email}`);
+      // userEmail = user.email;
+      dbGlobal
+        .collection('stories')
+        .orderBy('fecha', 'desc')
         .get()
         .then((snapshot) => {
           setupPosts(snapshot.docs);
         });
     } else {
-    // console.log('signout');
+      // console.log('signout');
       setupPosts([]);
     }
   });
