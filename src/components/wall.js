@@ -56,7 +56,6 @@ export const wall = () => {
       data.forEach((doc) => {
         const post = doc.data();
         post.id = doc.id;
-        console.log(post.likes);
         const htmlOfbtnEdit = `<a class='a-edit' data-id='${post.id}'>
                               <img  src='./images/edit.png' alt='edit'>
                               </a>`;
@@ -128,6 +127,7 @@ export const wall = () => {
     // console.log(` email: ${user.email}`);
     // userEmail = user.email;
       dbGlobal.collection('stories')
+        .orderBy('fecha', 'desc')
         .get()
         .then((snapshot) => {
           setupPosts(snapshot.docs);

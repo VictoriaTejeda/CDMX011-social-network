@@ -16,6 +16,7 @@ const toPost = (title, history, email) => {
       saveUser.uid,
     ],
     likes: [],
+    date: new Date(),
   });
 };
 
