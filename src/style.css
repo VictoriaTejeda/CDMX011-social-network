@@ -431,13 +431,12 @@ nav li a i {
   margin-top: 6rem;
   flex-direction: column;
 }
-
 .logIn-redirect i {
   color: #7bf00de3;
 }
 
 /*============================*/
-/*Wall=========*/
+Wall/*=========*/
 .wall-body {
   background-size: cover;
   background-size: cover;

@@ -30,7 +30,6 @@ export const logInWhitGoogle = (onNavigate) => {
     });
 };
 
-
 const provider = new firebase.auth.GithubAuthProvider();
 export function githubSignin(onNavigate) {
   firebase
@@ -57,7 +56,6 @@ export const loginWithEmail = (onNavigate, email, password) => {
       onNavigate('/wall');
     })
     .catch((error) => {
-
       const errorMessage = error.message;
       alert(`esto pasa cuando pongo mal el password ${errorMessage}`);
     });
