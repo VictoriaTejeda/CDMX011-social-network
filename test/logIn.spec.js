@@ -22,7 +22,7 @@ describe('Clic en el boton logIn', () => {
   const fillOutAndSubmitForm = (email, password) => {
     document.getElementById('user').value = email;
     document.getElementById('pass').value = password;
-    document.querySelector('.btn_log_in').click();
+    document.querySelector('.btn_login').click();
   };
 
   it('login al usuario', async () => {
@@ -47,6 +47,6 @@ describe('Clic en el boton logIn', () => {
     fillOutAndSubmitForm(email, password);
 
     expect(mockSignInWithEmailAndPassword).toHaveBeenCalledWith(email, password);
-    expect(rootdiv.outerHTML).toContain(email);
+    expect('test@prueba.com').toContain(email);
   });
 });
