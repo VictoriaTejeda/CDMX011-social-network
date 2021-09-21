@@ -30,8 +30,8 @@ export const logInWhitGoogle = (onNavigate) => {
     });
 };
 
-const provider = new firebase.auth.GithubAuthProvider();
 export function githubSignin(onNavigate) {
+  const provider = new firebase.auth.GithubAuthProvider();
   firebase
     .auth()
     .signInWithPopup(provider)
