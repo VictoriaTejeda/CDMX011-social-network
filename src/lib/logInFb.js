@@ -56,7 +56,6 @@ export const loginWithEmail = (onNavigate, email, password) => {
       onNavigate('/wall');
     })
     .catch((error) => {
-      const errorCode = error.code;
       const errorMessage = error.message;
       alert(`esto pasa cuando pongo mal el password ${errorMessage}`);
     });

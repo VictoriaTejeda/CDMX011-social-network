@@ -62,8 +62,6 @@ export function updatebuttons(divbtn) {
   newBtnLike.addEventListener('click', async () => {
     const like = UpdateLikes(storyId);
     like.then((resUnlike) => {
-      console.log('resultado de likes dentro del then');
-      console.log(resUnlike.likes.length);
       score.innerHTML = resUnlike.likes.length;
       const divActual = document.getElementById(storyId);
       showLike.hidden = true;

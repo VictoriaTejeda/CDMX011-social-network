@@ -63,7 +63,12 @@ export const wall = () => {
         const htmlOfbtndelete = `<a class='a-delete'>
         <img class='delete'data-id=${post.id} src='./images/delete.png' alt='delete'>
      </a>`;
-
+        const likeBtn = `<a class='a-like'>
+        <img class= 'like' src='./images/like.png' alt='like'>
+      </a>`;
+        const unLikeBtn = `<a class='a-disLike'>
+        <img class= 'dislike' src='./images/dislike.png' alt='like'>
+      </a>`;
         const templatePost = `
           <section id="container-post">
             <div class="data-user">
@@ -75,7 +80,8 @@ export const wall = () => {
             </div>
             <div class="btn-post">
             <div id="${post.id}" class="btn-post">
-            <a class='a-like'>
+              ${post.likes.includes(crtUser.uid) ? unLikeBtn : likeBtn}
+            <a class='a-like' hidden >
               <img class= 'like' src='./images/like.png' alt='like'>
             </a>
             <a class='a-disLike' hidden>
