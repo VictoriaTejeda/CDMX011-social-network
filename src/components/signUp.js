@@ -55,6 +55,7 @@ export const signUp = () => {
   theBody.classList.add('signUp-body');
   tagI.classList.add('fas', 'fa-home');
   allReadyLogIn.classList.add('logIn-redirect');
+  buttonSignup.classList.add('submit');
 
   tagHrefReturnHome.setAttribute('href', '#');
   tagNav.setAttribute('id', 'signUpNav');

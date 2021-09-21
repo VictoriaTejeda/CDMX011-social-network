@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap");
-
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 /* ==================================================================== STYLES HOME =========================================================================================*/
 .home_body {
   height: 100%;
@@ -47,12 +47,13 @@
   margin-bottom: 30px;
 }
 .container_btn button:hover {
-  background-color: #4c5b62;
-  color: ivory;
+  background-color: #c6cfcf;
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 .container_btn button:active {
-  transform: scale(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  background-color: #c6cfcf;
+  box-shadow: 0 5px #666;
+  transform: translateY(8px);
 }
 
 .btn_sign_up,
@@ -69,7 +70,65 @@
     inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
+.curret-User {
+  display: flex;
+  align-items: center;
+  margin: 15px 20px 10px 20px;
+}
+.btn-return img {
+  margin-top: 15px;
+  margin-right: 15px;
+}
 
+#postForm label {
+  font-size: 18px;
+  font-family: system-ui;
+  font-weight: 700;
+  color: rgb(15, 13, 13);
+}
+#title {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  border: 3px;
+  background: black;
+  color: white;
+  height: 33px;
+  border-radius: 10px;
+  width: 80%;
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 17px;
+  letter-spacing: 1px;
+  font-family: system-ui;
+}
+#history {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  border: 3px;
+  background: black;
+  color: white;
+  margin: auto;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: justify;
+  font-size: 20px;
+  max-height: 300px;
+}
+
+#history::placeholder {
+  font-size: 16px;
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 800px;
+  color: white;
+  font-family: system-ui;
+  text-align: center;
+}
 /*===================================================================================== LOG IN STYLES ==========================================================================*/
 
 * {
@@ -97,7 +156,7 @@ nav ul {
 }
 
 nav li a {
-  color: white;
+  color: rgb(241, 241, 241);
   text-decoration: none;
 }
 
@@ -119,7 +178,7 @@ nav li a i {
 
 .sub_contenedor {
   background: rgba(0, 0, 0, 0.34);
-  border-radius: 10px;
+  border-radius: 15px;
   position: absolute;
   width: 85%;
   height: 380px;
@@ -143,7 +202,6 @@ nav li a i {
   margin: 0 auto;
   margin-top: 10px;
 }
-
 .sub_contenedor input[type="email"],
 .sub_contenedor input[type="password"] {
   display: block;
@@ -152,7 +210,7 @@ nav li a i {
   margin: 0 auto;
   margin-top: 11px;
   margin-bottom: 10px;
-  font-family: "Love Ya Like A Sister", cursive;
+  font-family: "Gothic A1", sans-serif;
   border: none;
   outline: none;
   border-bottom: 3px solid white;
@@ -171,9 +229,9 @@ nav li a i {
   background: #8f9788;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25),
     inset 0px 3px 3px rgba(0, 0, 0, 0.25);
-  border-radius: 9px;
-  width: 35%;
-  height: 14%;
+  border-radius: 15px;
+  width: 45%;
+  height: 10%;
   font-family: "Love Ya Like A Sister", cursive;
   font-style: normal;
   font-weight: bold;
@@ -196,7 +254,16 @@ nav li a i {
   width: 15%;
   margin: 0 auto;
 }
-
+#register {
+  display: none;
+  width: 95%;
+  margin: auto;
+  font-size: 17px;
+  text-align: center;
+}
+#register i {
+  color: #7bf00de3;
+}
 .btn_google {
   display: block;
   font-family: "Love Ya Like A Sister", cursive;
@@ -283,6 +350,7 @@ nav li a i {
   text-align: center;
   color: #ffffff;
 }
+
 #signUpNav {
   display: flex;
   justify-content: flex-end;
@@ -295,19 +363,19 @@ nav li a i {
 }
 
 #signUpNav li a {
-  color: white;
+  color: rgb(235, 235, 235);
   text-decoration: none;
 }
 
 #signUpNav li a i {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 #signUpForm {
   width: 85%;
   height: 430px;
   background: rgba(0, 0, 0, 0.34);
-  border-radius: 10px;
+  border-radius: 15px;
   font-family: "Love Ya Like A Sister", cursive;
   color: #ffffff;
   padding-top: 20px;
@@ -339,73 +407,344 @@ nav li a i {
   color: white;
   font-size: 20px;
 }
-#submitSignUp {
+.submit {
   display: block;
-  width: 118px;
-  height: 37px;
-  font-family: "Gothic A1", sans-serif;
-  font-size: 16px;
+  width: 45%;
+  height: 10%;
+  font-family: "Love Ya Like A Sister", cursive;
+  font-size: 18px;
+  font-weight: bold;
   background: #8f9788;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), inset 0px 4px 4px rgb(0 0 0 / 25%);
-  border-radius: 10px;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25),
+    inset 0px 3px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
   margin: auto;
   margin-bottom: 40px;
   margin-top: 17px;
+  cursor: pointer;
 }
 .logIn-redirect {
   display: flex;
   font-family: "Love Ya Like A Sister", cursive;
-  font-style: normal;
-  font-size: 15px;
+  font-size: 20px;
   text-align: center;
   margin-top: 6rem;
   flex-direction: column;
 }
-/*.logIn-redirect i {
-  color: #ffffff;
+
+.logIn-redirect i {
+  color: #7bf00de3;
 }
 
 /*============================*/
 /*Wall=========*/
 .wall-body {
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  height: 100%;
 }
-#wall {
-  display: block;
+#headerWall {
+  display: flex;
+  background-image: url("./images/Header1.png");
+  background-size: 100%;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  align-items: center;
   font-family: "Love Ya Like A Sister", cursive;
-  color: beige;
-  font-style: normal;
+  color: rgb(7, 7, 7);
   font-weight: 600;
   font-size: 20px;
-  line-height: 25px;
-  text-align: center;
-  width: 60px;
-  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 15px;
 }
-
-.btn_log_out {
-  display: flex;
+#headerWall span {
   font-family: "Love Ya Like A Sister", cursive;
-  width: 240px;
-  height: 46px;
-  background: rgba(234, 230, 218, 0.13);
-  box-shadow: 0px 3px 3px rgb(0 0 0 / 25%) inset;
-  border-radius: 46.5px;
-  margin: 0 auto;
+  color: rgb(8, 8, 8);
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+#headerWall img {
+  color: rgb(10, 10, 10);
+  font-weight: 600;
+  margin-bottom: 30px;
+  width: 35px;
+  height: 30px;
+}
+.navigation {
+  display: flex;
+  margin-right: 15px;
+  margin-top: 15px;
+  margin: 10px;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  justify-content: space-between;
+}
+.log_out {
+  background: rgb(0 0 0 / 0%);
   margin-top: 10px;
   margin-bottom: 10px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 22px;
-  color: #ffffff;
+}
+.material-icons-outlined {
+  font-size: 18px;
+}
+#publish {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  margin-top: -15px;
+}
+#publish div {
+  display: flex;
+  height: 80%;
+  width: 80%;
+  background-color: transparent;
+  margin-bottom: 15px;
+}
+#imgUser {
+  height: 70px;
+  width: 70px;
+  background-color: white;
+  border-radius: 50px;
+  align-self: center;
+}
+#idUser {
+  font-family: system-ui;
+  font-size: 18px;
+  font-weight: 650;
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+}
+.modalPost {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background: transparent;
+  font-size: 18px;
+  font-family: "Love Ya Like A Sister", cursive;
+  width: 254px;
+  height: 42px;
+  box-shadow: 9px 10px 4px rgb(0 0 0 / 77%);
+  border-radius: 10px;
+}
+.modalPost:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(10px);
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.modalPost img {
+  height: 35px;
+  width: 30px;
+}
+#post {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin-top: 30px;
+  margin-inline: 5%;
+  font-size: 14px;
+  font-family: "Gothic A1", sans-serif;
+  color: aliceblue;
+}
+.btn-post {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.a-like img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  float: left;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  margin: 5px;
+}
+.a-disLike img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  float: left;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  margin: 5px;
+}
+.meAsusta {
+  margin-left: 10px;
+  color: rgb(185, 14, 14);
+  font-family: "Gothic A1", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+.score {
+  margin-left: 10px;
+  color: rgb(185, 14, 14);
+  font-family: "Gothic A1", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+.a-edit img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 33px;
+  height: 33px;
+  padding: 5px;
+  margin: 5px;
+}
+.a-delete img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 33px;
+  height: 33px;
+  padding: 5px;
+  margin: 5px;
+}
+/*============================POST===================*/
+.photo {
+  height: 70px;
+  width: 70px;
+  background-color: white;
+  border-radius: 50px;
+  align-self: center;
+}
+
+#postForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.emptyPost {
+  color: #110f0f;
+  font-size: 22px;
+  font-weight: 400;
+  text-align:center;
+}
+#postForm label {
+  color: #110f0f;
+  margin: 10px;
+}
+#history {
+  width: 80%;
+  height: 80%;
+}
+#container-post {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  border: 3px;
+  background: black;
+  color: white;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  width: 90%;
+  height: 90%;
+}
+.data-post {
+  width: 90%;
+  height: 90%;
+  border-style: none;
+  border-color: azure;
+  font-family: system-ui;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background: rgba(211, 211, 211, 0.12);
+  border-radius: 10px;
+}
+.btns-post, .btn-editPost{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #ccc;
+  color: hsl(0deg 0% 13%);
+  font-size: 18px;
+  font-family: system-ui;
+  width: 90px;
+  height: 35px;
+  box-shadow: 3px 6px 3px rgb(0 0 0 / 77%);
+  border-radius: 10px;
+  margin-bottom: 15px;
   justify-content: center;
 }
+
+.name-user {
+  padding-top: 15px;
+  font-family: system-ui;
+  letter-spacing: 2px;
+}
+
+.data-title {
+  font-family: system-ui;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 8px;
+}
+.data-history {
+  font-family: system-ui;
+  font-size: 20px;
+  text-align: justify;
+  margin-bottom: 8px;
+  margin-top: 5px;
+  padding: 10px;
+  width: 90%;
+  max-height: 300px;
+  overflow: auto;
+}
+
+.delete {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 33px;
+  height: 33px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.like {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  float: left;
+  width: 33px;
+  height: 33px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.edit {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 33px;
+  height: 33px;
+  padding: 5px;
+  margin: 5px;
+}
+
+/*============================ media querys  =========*/
 @media screen and (min-width: 1024px) {
+  #headerWall{
+  background-size: 100%;
+  background-position-y: center;
+  }
   .title {
     font-size: 90px;
   }
@@ -428,6 +767,47 @@ nav li a i {
     margin-left: 100px;
     margin-right: 100px;
   }
+/*============================ media querys wall =========*/
+  #publish{
+    margin-top: 60px;
+  }
+  #headerWall span {
+    
+    font-weight: 900;
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+  #idUser {
+    font-family: system-ui;
+    font-size: 40px;
+    font-weight: 700;
+    height: 70px;
+    width: 90%;
+}
+#imgUser {
+  height: 100px;
+  width: 100px;
+}
+
+#headerWall img {
+  color: rgb(10, 10, 10);
+  font-weight: 600;
+  margin-bottom: 30px;
+  width: 65px;
+  height: 60px;
+}
+
+.modalPost {
+  font-size: 26px;
+  width: 354px;
+  height: 52px;
+  
+}
+.name-user {
+  padding-top: 24px;
+  font-family: system-ui;
+  letter-spacing: 3px;
+}
   /*============================ media querys sign up =========*/
   .title_signup {
     font-size: 65px;
