@@ -59,7 +59,7 @@ export function updatebuttons(divbtn) {
   const newBtnDislike = btnDislike.cloneNode(true);
   btnDislike.parentNode.replaceChild(newBtnDislike, btnDislike);
   // Agregar listener a boton nuevo
-  newBtnLike.addEventListener('click', async () => {
+  newBtnLike.addEventListener('click', () => {
     const like = UpdateLikes(storyId);
     like.then((resUnlike) => {
       score.innerHTML = resUnlike.likes.length;
@@ -70,7 +70,7 @@ export function updatebuttons(divbtn) {
       updatebuttons(divActual);
     });
   });
-  newBtnDislike.addEventListener('click', async () => {
+  newBtnDislike.addEventListener('click', () => {
     const unLike = UpdateUnlikes(storyId);
     unLike.then((res) => {
       console.log('resultado de likes dentro del then');

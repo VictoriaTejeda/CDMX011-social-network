@@ -50,16 +50,15 @@ export const CreatePost = () => {
     onNavigate('/wall');
   });
 
-  divCreatePost.querySelector('.btns-post').addEventListener('click', async (e) => {
+  divCreatePost.querySelector('.btns-post').addEventListener('click', (e) => {
     e.preventDefault();
     const postForm = divCreatePost.querySelector('#postForm');
-
     const title = postForm.title;
     const history = postForm.history;
     if (title.value === '' || history.value === '') {
-      divCreatePost.querySelector('.emptyPost').innerHTML = 'escribe algo';
+      divCreatePost.querySelector('.emptyPost').innerHTML = 'No se puede realizar un post vacio.';
     } else {
-      await toPost(title.value, history.value, usuario.email);
+      toPost(title.value, history.value, usuario.email);
       postForm.reset();
       title.focus();
       onNavigate('/wall');

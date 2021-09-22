@@ -54,14 +54,14 @@ export const logIn = () => {
   imagenButton.setAttribute('src', '../images/logo_google.png');
   imgGitLogIn.setAttribute('src', '../images/github.png');
 
-  tagTitle.textContent = 'Iniciar sesion';
+  tagTitle.textContent = 'Iniciar sesión';
   tagOr.textContent = '-o-';
-  labelEmail.textContent = 'Correo electronico';
+  labelEmail.textContent = 'Correo electrónico';
   labelPassword.textContent = 'Contraseña';
-  buttonLogIn.textContent = 'Iniciar sesion';
+  buttonLogIn.textContent = 'Iniciar sesión';
   spanDivLoginGoogle.textContent = 'Ingresa con ';
   spanBtnLogInGit.textContent = 'Ingresa con ';
-  divRegister.textContent = '¿Aún no tiene cuenta? ';
+  divRegister.textContent = '¿Aún no tienes cuenta? ';
   signUp.textContent = 'Regístrate';
   // icono home, funcion retorno a home
   tagHrefReturnHome.addEventListener('click', (e) => {

@@ -13,7 +13,7 @@ export const home = () => {
 
   divHome.classList.add('section_home');
   theBody.classList.add('home_body');
-  namePage.classList.add('title');
+  namePage.classList.add('namePage');
   slogan.classList.add('slogan');
   containerButton.classList.add('container_btn');
   buttonSignUp.classList.add('btn_sign_up');
@@ -22,7 +22,7 @@ export const home = () => {
   buttonSignUp.textContent = 'Regístrate';
   buttonLogIn.textContent = 'Inicia sesión';
   namePage.innerHTML = 'Boo!';
-  slogan.innerHTML = 'Aquí se respira el miedo...cuentame tu historia.';
+  slogan.innerHTML = 'Aquí se respira el miedo...cuéntame tu historia.';
 
   buttonSignUp.addEventListener('click', () => onNavigate('/signUp'));
   buttonLogIn.addEventListener('click', () => onNavigate('/logIn'));

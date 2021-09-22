@@ -1,14 +1,3 @@
-const firebaseConfig = {
-  apiKey: 'AIzaSyAmFtZt8XA0kLFHhAglaTLjaFIpJ8NQ1PY',
-  authDomain: 'boo-73257.firebaseapp.com',
-  projectId: 'boo-73257',
-  storageBucket: 'boo-73257.appspot.com',
-  messagingSenderId: '862147976867',
-  appId: '1:862147976867:web:f234d866499afb00d8e916',
-};
-
-firebase.initializeApp(firebaseConfig);
-
 // acceder con una ventana emergente, utilizando signInWithPopup
 export const logInWhitGoogle = (onNavigate) => {
   const provider = new firebase.auth.GoogleAuthProvider();

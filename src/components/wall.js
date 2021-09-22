@@ -2,8 +2,8 @@
 import { logOutUser } from '../lib/utils.js';
 import { onNavigate } from '../main.js';
 import { updatebuttons } from './post/eLikes.js';
+import { prueba, dbGlobal } from '../lib/dataPost.js';
 
-const dbGlobal = firebase.firestore();
 const userId = () => firebase.auth().currentUser;
 let idPostToEdit = '';
 
@@ -27,7 +27,7 @@ export const wall = () => {
   <section id='publish'>
   <div id=curretUser>
     <img id=imgUser src="./images/avatar.png" >
-    <p id=idUser>Bienvenido ${crtUser.email}</p>
+    <p id=idUser>Bienvenid@ ${crtUser.email}</p>
   </div>
     <button class='modalPost'>
       <img src='./images/outline_post_add_black_24dp.png' alt='addPost'>
@@ -40,7 +40,10 @@ export const wall = () => {
 
   container.querySelector('.log_out').addEventListener('click', (e) => {
     e.preventDefault();
-    logOutUser();
+    const logOut = window.confirm('¿Estás seguro de querer eliminar el post?');
+    if (logOut === true) {
+      logOutUser();
+    }
   });
   container.querySelector('.modalPost').addEventListener('click', () => {
     onNavigate('/add');
@@ -53,10 +56,8 @@ export const wall = () => {
     if (data.length) {
       let html = '';
       data.forEach((doc) => {
-        data.sort((a, b) => a.fecha > b.fecha);
         const post = doc.data();
         post.id = doc.id;
-        console.log(post.fecha);
         const htmlOfbtnEdit = `<a class='a-edit' data-id='${post.id}'>
                               <img  src='./images/edit.png' alt='edit'>
                               </a>`;
@@ -108,9 +109,7 @@ export const wall = () => {
       const btnsDelete = newPost.querySelectorAll('.a-delete');
       btnsDelete.forEach((btn) => {
         btn.addEventListener('click', async (e) => {
-          const result = window.confirm(
-            '¿Estás seguro de querer eliminar el post?',
-          );
+          const result = window.confirm('¿Estás seguro de querer eliminar el post?');
           if (result === true) {
             await deletePost(e.target.dataset.id);
             onNavigate('/wall');
@@ -128,24 +127,7 @@ export const wall = () => {
       updatebuttons(divbtn);
     });
   };
-
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      // console.log(` Name: ${user.displayName}`);
-      // console.log(` email: ${user.email}`);
-      // userEmail = user.email;
-      dbGlobal
-        .collection('stories')
-        .orderBy('fecha', 'desc')
-        .get()
-        .then((snapshot) => {
-          setupPosts(snapshot.docs);
-        });
-    } else {
-      // console.log('signout');
-      setupPosts([]);
-    }
-  });
+  prueba(setupPosts);
 
   return container;
 };

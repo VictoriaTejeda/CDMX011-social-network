@@ -8,11 +8,8 @@ export const logOutUser = () => {
     .signOut()
     .then(() => {
       onNavigate('/');
-      // eslint-disable-next-line no-alert
-      alert('Vuelve pronto, Duerme tranquilo si puedes!! ');
     })
     .catch((error) => {
-      // Handle Errors here.
       const errorCode = error.code;
       console.log(` esto es error: ${errorCode}`);
     });

@@ -12,7 +12,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.title,
+.namePage,
 .slogan {
   font-family: "Love Ya Like A Sister", cursive;
   text-align: center;
@@ -26,9 +26,9 @@
   height: 100vh;
   justify-content: space-around;
 }
-.title {
+.namePage {
   margin-top: 30px;
-  font-size: 0px;
+  font-size: 50px;
 }
 
 .slogan {
@@ -497,8 +497,8 @@ Wall/*=========*/
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  margin-top: -15px;
 }
+
 #publish div {
   display: flex;
   height: 80%;
@@ -743,7 +743,7 @@ Wall/*=========*/
   background-size: 100%;
   background-position-y: center;
   }
-  .title {
+  .namePage {
     font-size: 90px;
   }
 
