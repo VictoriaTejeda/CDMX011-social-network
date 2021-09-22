@@ -40,7 +40,7 @@ export const wall = () => {
 
   container.querySelector('.log_out').addEventListener('click', (e) => {
     e.preventDefault();
-    const logOut = window.confirm('¿Estás seguro de querer eliminar el post?');
+    const logOut = window.confirm('Descansa...si es que puedes');
     if (logOut === true) {
       logOutUser();
     }
