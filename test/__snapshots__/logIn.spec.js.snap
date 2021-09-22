@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Clic en el boton logIn Test sobre log In 1`] = `"<form class=\\"sub_contenedor\\"><label>Correo electronico</label><input id=\\"user\\" type=\\"email\\"><label>Contraseña</label><input id=\\"pass\\" type=\\"password\\"><button class=\\"btn_login\\">Iniciar sesion</button><h4 class=\\"tag_or\\">-o-</h4><button class=\\"btn_google\\"><div><span>Ingresa con </span><img src=\\"../images/logo_google.png\\"></div></button><button class=\\"btn_git\\"><div><span>Ingresa con </span><img src=\\"../images/github.png\\"></div></button></form>"`;

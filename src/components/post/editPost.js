@@ -16,6 +16,7 @@ const updatePost = (id, updateObject) => dbGlobal.collection('stories').doc(id).
 const loadData = async () => {
   idPost = getIdPostToEdit();
   const doc = await getPost(idPost);
+  console.log(doc);
   const post = doc.data();
   const postForm = document.getElementById('postForm');
   postForm.title.value = post.title;

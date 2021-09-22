@@ -2,13 +2,12 @@
 import { logOutUser } from '../lib/utils.js';
 import { onNavigate } from '../main.js';
 import { updatebuttons } from './post/eLikes.js';
+import { prueba, dbGlobal } from '../lib/dataPost.js';
 
-const dbGlobal = firebase.firestore();
 const userId = () => firebase.auth().currentUser;
 let idPostToEdit = '';
 
 export const getIdPostToEdit = () => idPostToEdit;
-
 export const wall = () => {
   document.body.style.backgroundImage = 'url(../images/post-background.jpg';
   const wallBody = document.querySelector('body');
@@ -28,7 +27,7 @@ export const wall = () => {
   <section id='publish'>
   <div id=curretUser>
     <img id=imgUser src="./images/avatar.png" >
-    <p id=idUser>Bienvenido ${crtUser.email}</p>
+    <p id=idUser>Bienvenid@ ${crtUser.email}</p>
   </div>
     <button class='modalPost'>
       <img src='./images/outline_post_add_black_24dp.png' alt='addPost'>
@@ -41,7 +40,10 @@ export const wall = () => {
 
   container.querySelector('.log_out').addEventListener('click', (e) => {
     e.preventDefault();
-    logOutUser();
+    const logOut = window.confirm('¿Estás seguro de querer eliminar el post?');
+    if (logOut === true) {
+      logOutUser();
+    }
   });
   container.querySelector('.modalPost').addEventListener('click', () => {
     onNavigate('/add');
@@ -56,14 +58,18 @@ export const wall = () => {
       data.forEach((doc) => {
         const post = doc.data();
         post.id = doc.id;
-        console.log(post.likes);
         const htmlOfbtnEdit = `<a class='a-edit' data-id='${post.id}'>
                               <img  src='./images/edit.png' alt='edit'>
                               </a>`;
         const htmlOfbtndelete = `<a class='a-delete'>
         <img class='delete'data-id=${post.id} src='./images/delete.png' alt='delete'>
      </a>`;
-
+        const likeBtn = `<a class='a-like'>
+        <img class= 'like' src='./images/like.png' alt='like'>
+      </a>`;
+        const unLikeBtn = `<a class='a-disLike'>
+        <img class= 'dislike' src='./images/dislike.png' alt='like'>
+      </a>`;
         const templatePost = `
           <section id="container-post">
             <div class="data-user">
@@ -75,7 +81,8 @@ export const wall = () => {
             </div>
             <div class="btn-post">
             <div id="${post.id}" class="btn-post">
-            <a class='a-like'>
+              ${post.likes.includes(crtUser.uid) ? unLikeBtn : likeBtn}
+            <a class='a-like' hidden >
               <img class= 'like' src='./images/like.png' alt='like'>
             </a>
             <a class='a-disLike' hidden>
@@ -83,12 +90,11 @@ export const wall = () => {
             </a>
             <span id="${doc.id}" class='score'>${post.likes.length}</span>
             <span class="meAsusta">Me asusta</span>
-              ${(post.email === crtUser.email) ? htmlOfbtnEdit : ''}
-              ${(post.email === crtUser.email) ? htmlOfbtndelete : ''}
+              ${post.email === crtUser.email ? htmlOfbtnEdit : ''}
+              ${post.email === crtUser.email ? htmlOfbtndelete : ''}
             </div>
           </section>
           `;
-
         html += templatePost;
         newPost.innerHTML = html;
       });
@@ -121,22 +127,7 @@ export const wall = () => {
       updatebuttons(divbtn);
     });
   };
-
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-    // console.log(` Name: ${user.displayName}`);
-    // console.log(` email: ${user.email}`);
-    // userEmail = user.email;
-      dbGlobal.collection('stories')
-        .get()
-        .then((snapshot) => {
-          setupPosts(snapshot.docs);
-        });
-    } else {
-    // console.log('signout');
-      setupPosts([]);
-    }
-  });
+  prueba(setupPosts);
 
   return container;
 };
