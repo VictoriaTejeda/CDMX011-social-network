@@ -68,7 +68,7 @@ export const wall = () => {
         <img class= 'like' src='./images/like.png' alt='like'>
       </a>`;
         const unLikeBtn = `<a class='a-disLike'>
-        <img class= 'dislike' src='./images/dislike.png' alt='like'>
+        <img class= 'dislike' src='./images/disLike.png' alt='like'>
       </a>`;
         const templatePost = `
           <section id="container-post">
