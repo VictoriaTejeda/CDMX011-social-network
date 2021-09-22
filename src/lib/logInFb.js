@@ -46,6 +46,6 @@ export const loginWithEmail = (onNavigate, email, password) => {
     })
     .catch((error) => {
       const errorMessage = error.message;
-      alert(`esto pasa cuando pongo mal el password ${errorMessage}`);
+      alert(`El usuario o contraseña son incorrectos, favor de verificarlos`);
     });
 };
