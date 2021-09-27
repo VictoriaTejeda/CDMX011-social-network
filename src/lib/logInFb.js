@@ -46,6 +46,7 @@ export const loginWithEmail = (onNavigate, email, password) => {
     })
     .catch((error) => {
       const errorMessage = error.message;
-      alert(`El usuario o contraseña son incorrectos, favor de verificarlos`);
+      console.log(errorMessage);
+      alert('El usuario o contraseña son incorrectos, favor de verificarlos');
     });
 };

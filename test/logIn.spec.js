@@ -2,11 +2,10 @@
  * @jest-environment jsdom
  */
 
-import './globals/fibase.js';
+import './globals/firebase.js';
 import { render } from '../src/main.js';
 import { logIn } from '../src/components/logIn.js';
 // import { loginWithEmail } from '../src/lib/logInFb.js';
-
 describe('Clic en el boton logIn', () => {
   let rootdiv = document.createElement('div');
   rootdiv.setAttribute('id', 'root');

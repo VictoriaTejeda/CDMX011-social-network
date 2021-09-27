@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import './globals/fibase.js';
+import './globals/firebase.js';
 import { render } from '../src/main.js';
 
 describe('Clic en el boton signUp', () => {
