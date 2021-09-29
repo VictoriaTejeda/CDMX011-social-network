@@ -43,6 +43,7 @@ const updateData = async () => {
 export const editPost = () => {
   divEditPost = document.createElement('div');
   const crtUser = userId();
+  const avatar = './images/avatarBoo.png';
   // template formulario
   const htmlTemplateFormEdit = `
   <nav class= "return">
@@ -51,7 +52,7 @@ export const editPost = () => {
     </a>
   </nav>
   <div class="curret-User">
-    <img id="img-User" class= "photo" src="./images/avatar.png">
+    <img id="img-User" class= "photo" src=${crtUser.photoURL ? crtUser.photoURL : avatar}>
     <p id="idUser">${crtUser.email}</p>
   </div>
   <div class="emptyPost"></div>

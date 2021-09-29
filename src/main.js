@@ -4,6 +4,7 @@ import { home } from './components/home.js';
 import { logIn } from './components/logIn.js';
 import { signUp } from './components/signUp.js';
 import { wall } from './components/wall.js';
+import { userWall } from './components/userWall.js';
 import { CreatePost } from './components/post/CreatePost.js';
 import { editPost } from './components/post/editPost.js';
 
@@ -14,14 +15,11 @@ export const routes = {
   '/wall': wall,
   '/add': CreatePost,
   '/edit': editPost,
+  '/wallUser': userWall,
 };
 export const onNavigate = (pathname) => {
   const rootDiv = document.getElementById('root');
-  window.history.pushState(
-    {},
-    pathname,
-    window.location.origin + pathname,
-  );
+  window.history.pushState({}, pathname, window.location.origin + pathname);
   while (rootDiv.firstChild) {
     rootDiv.removeChild(rootDiv.firstChild);
   }
@@ -31,10 +29,8 @@ export const onNavigate = (pathname) => {
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     onNavigate('/wall');
-    console.log('Toy Logeado');
   } else {
     onNavigate('/');
-    console.log('No Logueado');
   }
 });
 
@@ -44,7 +40,13 @@ window.onpopstate = () => {
     rootDiv.removeChild(rootDiv.firstChild);
   }
   firebase.auth().onAuthStateChanged((user) => {
-    if (!user && ((window.location.pathname !== '/') || (window.location.pathname !== '/signUp') || (window.location.pathname !== '/logIn'))) {
+    if (
+      !user
+      && (window.location.pathname !== '/'
+        || window.location.pathname !== '/signUp'
+        || window.location.pathname !== '/logIn'
+        || window.location.pathname !== '/wallUser')
+    ) {
       onNavigate('/');
     }
   });

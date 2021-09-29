@@ -78,6 +78,9 @@
 .btn-return img {
   margin-top: 15px;
   margin-right: 15px;
+  align-self: flex-end;
+  width: 30px;
+  height: 30px;
 }
 
 #postForm label {
@@ -437,7 +440,8 @@ nav li a i {
 /*============================*/
 Wall/*=========*/
 .wall-body {
-  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   display: flex;
@@ -445,6 +449,7 @@ Wall/*=========*/
   width: 100%;
   height: 100%;
 }
+
 #headerWall {
   display: flex;
   background-image: url("./images/Header1.png");
@@ -509,9 +514,15 @@ Wall/*=========*/
 #imgUser {
   height: 70px;
   width: 70px;
-  background-color: white;
+  background-color: black;
   border-radius: 50px;
   align-self: center;
+  box-shadow: 9px 10px 4px rgb(0 0 0 / 77%);
+}
+#imgUser:active{
+  box-shadow: 0 5px #666;
+  transform: translateY(10px);
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 #idUser {
   font-family: system-ui;
@@ -522,6 +533,11 @@ Wall/*=========*/
   text-align: center;
   margin: 10px;
 }
+#idUser img:hover{
+  background-color: #c6cfcf;
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0)
+}
+
 .modalPost {
   display: flex;
   flex-direction: row;
@@ -581,14 +597,14 @@ Wall/*=========*/
 }
 .meAsusta {
   margin-left: 10px;
-  color: rgb(185, 14, 14);
+  color: rgb(170, 164, 164);
   font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 600;
 }
 .score {
   margin-left: 10px;
-  color: rgb(185, 14, 14);
+  color: rgb(99, 136, 115);
   font-family: "Gothic A1", sans-serif;
   font-size: 18px;
   font-weight: 600;
@@ -615,7 +631,7 @@ Wall/*=========*/
 .photo {
   height: 70px;
   width: 70px;
-  background-color: white;
+  background-color: black;
   border-radius: 50px;
   align-self: center;
 }
@@ -626,8 +642,8 @@ Wall/*=========*/
   align-items: center;
 }
 .emptyPost {
-  color: #110f0f;
-  font-size: 22px;
+  color: #1f1e1e;
+  font-size: 20px;
   font-weight: 400;
   text-align:center;
 }
@@ -737,6 +753,31 @@ Wall/*=========*/
   margin: 5px;
 }
 
+
+/*============================Userwall===================*/
+#boo{
+  font-family: "Love Ya Like A Sister", cursive;
+  color: rgb(8, 8, 8);
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+#boo:hover{
+  background-color: transparent;
+  color:rgb(7, 6, 6);
+  padding:8px;
+  border-radius: 10px;
+  border-bottom: rgb(36, 31, 36);
+  border-right:rgb(36, 31, 36);
+  box-shadow: 5px 15px 18px -12px #000000, 10px 10px 20px 10px rgba(0, 0, 0, 0);
+}
+#photoUser {
+  height: 70px;
+  width: 70px;
+  background-color: black;
+  border-radius: 50px;
+  align-self: center;
+}
 /*============================ media querys  =========*/
 @media screen and (min-width: 1024px) {
   #headerWall{
@@ -817,4 +858,34 @@ Wall/*=========*/
     margin: auto;
     flex-direction: column;
   }
+
+  #boo{
+    font-size: 60px;
+  }
+  #photoUser{
+    height: 100px;
+    width: 100px;
+  }
+  .photo {
+    height: 100px;
+    width: 100px;
+}
+.emptyPost {
+  font-size: 26px;
+  font-weight: 600;
+}
+#postForm label {
+  font-size: 30px;
+  font-family: system-ui;
+  font-weight: 700;
+  color: rgb(15, 13, 13);
+}
+.curret-User {
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+}
+.data-history {
+  width: 98%;
+}
 }

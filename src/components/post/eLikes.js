@@ -66,7 +66,6 @@ export function updatebuttons(divbtn) {
       const divActual = document.getElementById(storyId);
       showLike.hidden = true;
       hideLike.hidden = false;
-
       updatebuttons(divActual);
     });
   });
