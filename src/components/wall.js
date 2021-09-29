@@ -1,20 +1,20 @@
-/* eslint-disable import/no-cycle */
 import { logOutUser } from '../lib/utils.js';
 import { onNavigate } from '../main.js';
 import { updatebuttons } from './post/eLikes.js';
-import { prueba, dbGlobal } from '../lib/dataPost.js';
+import { GetAllStories, dbGlobal } from '../lib/historyRepository.js';
 
-const userId = () => firebase.auth().currentUser;
+const userFb = () => firebase.auth().currentUser;
 let idPostToEdit = '';
 
 export const getIdPostToEdit = () => idPostToEdit;
 export const wall = () => {
-  document.body.style.backgroundImage = 'url(../images/post-background.jpg';
+  document.body.style.backgroundImage = 'url(../images/wallBackground.jpg';
   const wallBody = document.querySelector('body');
   wallBody.classList.add('wall-body');
   const container = document.createElement('div');
-  const crtUser = userId();
+  const crtUser = userFb();
   console.log(crtUser.email);
+  const avatar = './images/avatarBoo.png';
   const header = `
   <header id='headerWall'>
     <nav class='navigation'>
@@ -26,7 +26,7 @@ export const wall = () => {
   </header>
   <section id='publish'>
   <div id=curretUser>
-    <img id=imgUser src="./images/avatar.png" >
+    <img id=imgUser src= ${crtUser.photoURL ? crtUser.photoURL : avatar}>
     <p id=idUser>Bienvenid@ ${crtUser.email}</p>
   </div>
     <button class='modalPost'>
@@ -47,6 +47,10 @@ export const wall = () => {
   });
   container.querySelector('.modalPost').addEventListener('click', () => {
     onNavigate('/add');
+  });
+
+  container.querySelector('#imgUser').addEventListener('click', () => {
+    onNavigate('/wallUser');
   });
 
   const deletePost = (id) => dbGlobal.collection('stories').doc(id).delete();
@@ -127,7 +131,7 @@ export const wall = () => {
       updatebuttons(divbtn);
     });
   };
-  prueba(setupPosts);
+  GetAllStories(setupPosts);
 
   return container;
 };

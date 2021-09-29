@@ -3,10 +3,10 @@ import { onNavigate } from '../../main.js';
 
 const dbGlobal = firebase.firestore();
 let usuario = '';
-const userId = () => firebase.auth().currentUser;
+const userFb = () => firebase.auth().currentUser;
 
 const toPost = (title, history, email) => {
-  const saveUser = userId();
+  const saveUser = userFb();
   dbGlobal.collection('stories').doc().set({
     title,
     history,
@@ -22,8 +22,8 @@ const toPost = (title, history, email) => {
 
 export const CreatePost = () => {
   const divCreatePost = document.createElement('div');
-  const crtUser = userId();
-
+  const crtUser = userFb();
+  const avatar = './images/avatarBoo.png';
   const postNodes = `
   <nav class= "return">
     <a class="btn-return">
@@ -31,7 +31,7 @@ export const CreatePost = () => {
     </a>
   </nav>
   <div class="curret-User">
-    <img id="img-User" class= "photo" src="./images/avatar.png">
+    <img id="img-User" class= "photo" src=${crtUser.photoURL ? crtUser.photoURL : avatar}>
     <p id="idUser">${crtUser.email}</p>
   </div>
   <div class="emptyPost"></div>
@@ -56,7 +56,7 @@ export const CreatePost = () => {
     const title = postForm.title;
     const history = postForm.history;
     if (title.value === '' || history.value === '') {
-      divCreatePost.querySelector('.emptyPost').innerHTML = 'No se puede realizar un post vacio.';
+      divCreatePost.querySelector('.emptyPost').innerHTML = 'No se puede dejar este campo en blanco, compartenos tu historia.';
     } else {
       toPost(title.value, history.value, usuario.email);
       postForm.reset();
